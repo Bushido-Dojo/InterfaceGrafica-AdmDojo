@@ -1,16 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package com.mycompany.bushido_dojo;
 
-/**
- *
- * @author dudac
- */
-public class Bushido_Dojo {
+public class Bushido_Dojo extends jframeBushido_Dojo{
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        jframeBushido_Dojo login = new jframeBushido_Dojo();
+        login.setVisible(true);
+        
     }
 }

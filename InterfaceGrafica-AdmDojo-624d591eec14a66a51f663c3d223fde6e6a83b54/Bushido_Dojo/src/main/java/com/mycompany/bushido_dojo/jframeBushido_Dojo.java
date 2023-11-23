@@ -1,13 +1,4 @@
 package com.mycompany.bushido_dojo;
-<<<<<<< HEAD
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import javax.swing.JOptionPane;
-=======
->>>>>>> 624d591eec14a66a51f663c3d223fde6e6a83b54
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -39,51 +30,14 @@ public class jframeBushido_Dojo extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-<<<<<<< HEAD
-        jLabel4 = new javax.swing.JLabel();
-        botãoLogar = new javax.swing.JButton();
-        senhaField = new javax.swing.JPasswordField();
-        cpfField = new javax.swing.JFormattedTextField();
-=======
         jTextField1 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
->>>>>>> 624d591eec14a66a51f663c3d223fde6e6a83b54
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
-<<<<<<< HEAD
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Bushido Dojo");
-
-        jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Login");
-
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("CPF:");
-
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Senha:");
-
-        botãoLogar.setText("Logar");
-        botãoLogar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botãoLogarActionPerformed(evt);
-            }
-        });
-
-        senhaField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-
-        try {
-            cpfField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        cpfField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-=======
         jLabel1.setText("Bushido Dojo");
 
         jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
@@ -99,39 +53,12 @@ public class jframeBushido_Dojo extends javax.swing.JFrame {
         jTextField2.setText("Digite sua senha");
 
         jButton1.setText("Logar");
->>>>>>> 624d591eec14a66a51f663c3d223fde6e6a83b54
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-<<<<<<< HEAD
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(227, 227, 227))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(259, 259, 259))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(195, 195, 195)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(botãoLogar)
-                                .addGap(32, 32, 32))
-                            .addComponent(senhaField)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
-                        .addComponent(cpfField, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(213, Short.MAX_VALUE))
-=======
                 .addContainerGap(225, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(227, 227, 227))
@@ -154,27 +81,11 @@ public class jframeBushido_Dojo extends javax.swing.JFrame {
                                 .addGap(13, 13, 13)
                                 .addComponent(jButton1)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
->>>>>>> 624d591eec14a66a51f663c3d223fde6e6a83b54
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel1)
-<<<<<<< HEAD
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(cpfField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(senhaField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(botãoLogar)
-                .addGap(0, 177, Short.MAX_VALUE))
-=======
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
@@ -188,56 +99,11 @@ public class jframeBushido_Dojo extends javax.swing.JFrame {
                 .addGap(42, 42, 42)
                 .addComponent(jButton1)
                 .addGap(0, 142, Short.MAX_VALUE))
->>>>>>> 624d591eec14a66a51f663c3d223fde6e6a83b54
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-<<<<<<< HEAD
-    private void botãoLogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botãoLogarActionPerformed
-        String CPF = "'168.388.312-90'";
-        String Senha = "'BloodsADM'";
-    
-    String dbCPF = "";
-    String dbSenha = "";
-    String dbNome = "";
-    
-    String url = "jdbc:sqlserver://regulus.cotuca.unicamp.br\\sqlExpress:1433;databaseName=BD23319;trustServerCertificate=True;";
-    
-    try (Connection conexao = DriverManager.getConnection(url, "seu_usuario", "sua_senha")) {
-        String query = "SELECT CPF, senha, nome FROM Karate.ADM WHERE CPF = ?";
-        PreparedStatement stmt = conexao.prepareStatement(query);
-        stmt.setString(1, CPF);
-        
-        ResultSet resultado = stmt.executeQuery();
-
-        // Verifica se há um resultado
-        if (resultado.next()) {
-            dbCPF = resultado.getString("CPF");
-            dbSenha = resultado.getString("senha");
-            dbNome = resultado.getString("nome");
-        }
-
-        // Fecha as conexões e recursos do banco de dados
-        resultado.close();
-        stmt.close();
-    } catch (SQLException e) {
-        e.printStackTrace();
-        // Trate o erro de conexão ou consultas SQL aqui
-    }
-    
-    // Verifica se os dados inseridos correspondem aos do banco de dados
-    if (CPF.equals(String.valueOf(dbCPF).trim()) && Senha.equals(String.valueOf(dbSenha).trim())){
-        JOptionPane.showMessageDialog(null, "Bem-vindo, " + dbNome);
-    } else {
-        JOptionPane.showMessageDialog(null, "Usuário ou senha inválidos" + CPF );
-    }
-
-    }//GEN-LAST:event_botãoLogarActionPerformed
-
-=======
->>>>>>> 624d591eec14a66a51f663c3d223fde6e6a83b54
     /**
      * @param args the command line arguments
      */
@@ -274,21 +140,12 @@ public class jframeBushido_Dojo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-<<<<<<< HEAD
-    private javax.swing.JButton botãoLogar;
-    private javax.swing.JFormattedTextField cpfField;
-=======
     private javax.swing.JButton jButton1;
->>>>>>> 624d591eec14a66a51f663c3d223fde6e6a83b54
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-<<<<<<< HEAD
-    private javax.swing.JPasswordField senhaField;
-=======
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
->>>>>>> 624d591eec14a66a51f663c3d223fde6e6a83b54
     // End of variables declaration//GEN-END:variables
 }

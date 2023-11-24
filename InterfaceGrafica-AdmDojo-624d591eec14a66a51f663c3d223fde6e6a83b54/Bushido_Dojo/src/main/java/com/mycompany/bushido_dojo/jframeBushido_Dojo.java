@@ -47,7 +47,7 @@ public class jframeBushido_Dojo extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(500, 500));
         getContentPane().setLayout(null);
 
-        jPanel1.setBackground(new java.awt.Color(255, 197, 69));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setLayout(null);
 
         labelBushidoFooter.setFont(new java.awt.Font("Rodchenko Grotesk ML", 1, 24)); // NOI18N
@@ -57,6 +57,7 @@ public class jframeBushido_Dojo extends javax.swing.JFrame {
         jPanel1.add(labelBushidoFooter);
         labelBushidoFooter.setBounds(562, 473, 138, 27);
 
+        jPanel2.setBackground(new java.awt.Color(156, 255, 255));
         jPanel2.setLayout(null);
 
         botaoSair.setBackground(new java.awt.Color(13, 32, 51));
@@ -79,9 +80,10 @@ public class jframeBushido_Dojo extends javax.swing.JFrame {
         jPanel2.add(cpfField);
         cpfField.setBounds(140, 170, 80, 20);
 
+        cpfLabel.setFont(new java.awt.Font("Bonkers", 1, 14)); // NOI18N
         cpfLabel.setText("CPF");
         jPanel2.add(cpfLabel);
-        cpfLabel.setBounds(80, 170, 41, 16);
+        cpfLabel.setBounds(80, 170, 41, 15);
 
         idUsuarioLabel.setText("IdUsuario");
         jPanel2.add(idUsuarioLabel);

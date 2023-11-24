@@ -1,5 +1,7 @@
 package com.mycompany.bushido_dojo;
 
+import java.awt.Color;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -32,14 +34,15 @@ public class jframeBushido_Dojo extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         botaoSair = new javax.swing.JButton();
         botaoEntrar = new javax.swing.JButton();
-        senhaField = new javax.swing.JPasswordField();
-        idUsuarioField = new javax.swing.JFormattedTextField();
-        cpfField = new javax.swing.JFormattedTextField();
-        cpfLabel = new javax.swing.JLabel();
-        idUsuarioLabel = new javax.swing.JLabel();
-        senhaLabel = new javax.swing.JLabel();
         labelLogo = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        senhaLabel = new javax.swing.JLabel();
+        senhaField = new javax.swing.JPasswordField();
+        idUsuarioLabel = new javax.swing.JLabel();
+        idUsuarioField = new javax.swing.JFormattedTextField();
+        cpfLabel = new javax.swing.JLabel();
+        cpfField = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Bushido Dojo");
@@ -47,17 +50,17 @@ public class jframeBushido_Dojo extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(500, 500));
         getContentPane().setLayout(null);
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(13, 32, 51));
         jPanel1.setLayout(null);
 
         labelBushidoFooter.setFont(new java.awt.Font("Rodchenko Grotesk ML", 1, 24)); // NOI18N
-        labelBushidoFooter.setForeground(new java.awt.Color(147, 150, 8));
+        labelBushidoFooter.setForeground(new java.awt.Color(204, 204, 204));
         labelBushidoFooter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelBushidoFooter.setText("Bushido Dojo");
         jPanel1.add(labelBushidoFooter);
         labelBushidoFooter.setBounds(562, 473, 138, 27);
 
-        jPanel2.setBackground(new java.awt.Color(156, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(100, 100, 100));
         jPanel2.setLayout(null);
 
         botaoSair.setBackground(new java.awt.Color(13, 32, 51));
@@ -73,25 +76,6 @@ public class jframeBushido_Dojo extends javax.swing.JFrame {
         botaoEntrar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.lightGray));
         jPanel2.add(botaoEntrar);
         botaoEntrar.setBounds(40, 380, 102, 36);
-        jPanel2.add(senhaField);
-        senhaField.setBounds(140, 260, 80, 22);
-        jPanel2.add(idUsuarioField);
-        idUsuarioField.setBounds(140, 210, 80, 22);
-        jPanel2.add(cpfField);
-        cpfField.setBounds(140, 170, 80, 20);
-
-        cpfLabel.setFont(new java.awt.Font("Bonkers", 1, 14)); // NOI18N
-        cpfLabel.setText("CPF");
-        jPanel2.add(cpfLabel);
-        cpfLabel.setBounds(80, 170, 41, 15);
-
-        idUsuarioLabel.setText("IdUsuario");
-        jPanel2.add(idUsuarioLabel);
-        idUsuarioLabel.setBounds(80, 210, 54, 16);
-
-        senhaLabel.setText("Senha:");
-        jPanel2.add(senhaLabel);
-        senhaLabel.setBounds(80, 260, 41, 16);
 
         labelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/logo.png"))); // NOI18N
         jPanel2.add(labelLogo);
@@ -101,6 +85,49 @@ public class jframeBushido_Dojo extends javax.swing.JFrame {
         jPanel2.add(jLabel1);
         jLabel1.setBounds(10, 80, 320, 40);
 
+        jPanel5.setLayout(null);
+
+        senhaLabel.setFont(new java.awt.Font("Gotham", 1, 14)); // NOI18N
+        senhaLabel.setText("Senha:");
+        jPanel5.add(senhaLabel);
+        senhaLabel.setBounds(70, 110, 48, 16);
+        jPanel5.add(senhaField);
+        senhaField.setBounds(120, 110, 100, 20);
+
+        idUsuarioLabel.setFont(new java.awt.Font("Gotham", 1, 14)); // NOI18N
+        idUsuarioLabel.setText("Usuário:");
+        jPanel5.add(idUsuarioLabel);
+        idUsuarioLabel.setBounds(60, 60, 60, 16);
+
+        idUsuarioField.setForeground(new java.awt.Color(153, 153, 153));
+        idUsuarioField.setText("Digite o Usuário");
+        idUsuarioField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                idUsuarioFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                idUsuarioFieldFocusLost(evt);
+            }
+        });
+        jPanel5.add(idUsuarioField);
+        idUsuarioField.setBounds(120, 60, 100, 22);
+
+        cpfLabel.setFont(new java.awt.Font("Gotham", 1, 14)); // NOI18N
+        cpfLabel.setText("CPF:");
+        jPanel5.add(cpfLabel);
+        cpfLabel.setBounds(80, 30, 41, 16);
+
+        try {
+            cpfField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jPanel5.add(cpfField);
+        cpfField.setBounds(120, 28, 100, 22);
+
+        jPanel2.add(jPanel5);
+        jPanel5.setBounds(0, 150, 310, 180);
+
         jPanel1.add(jPanel2);
         jPanel2.setBounds(30, 0, 310, 500);
 
@@ -109,6 +136,24 @@ public class jframeBushido_Dojo extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void idUsuarioFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_idUsuarioFieldFocusGained
+        if(idUsuarioField.getText().equals("Digite o Usuário"))
+        {
+            idUsuarioField.setText("");
+            idUsuarioField.setForeground(new Color(153,153,153));
+            
+        }
+    }//GEN-LAST:event_idUsuarioFieldFocusGained
+
+    private void idUsuarioFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_idUsuarioFieldFocusLost
+        if(idUsuarioField.getText().equals(""))
+        {
+            idUsuarioField.setText("Digite o Usuário");
+            idUsuarioField.setForeground(new Color(0,0,0));
+            
+        }
+    }//GEN-LAST:event_idUsuarioFieldFocusLost
 
     /**
      * @param args the command line arguments
@@ -121,7 +166,7 @@ public class jframeBushido_Dojo extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
+                if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -155,6 +200,7 @@ public class jframeBushido_Dojo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JLabel labelBushidoFooter;
     private javax.swing.JLabel labelLogo;
     private javax.swing.JPasswordField senhaField;

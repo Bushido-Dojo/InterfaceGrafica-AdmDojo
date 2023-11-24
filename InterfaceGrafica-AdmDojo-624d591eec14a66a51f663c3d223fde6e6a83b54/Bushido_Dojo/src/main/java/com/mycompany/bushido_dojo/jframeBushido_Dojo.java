@@ -28,38 +28,28 @@ public class jframeBushido_Dojo extends javax.swing.JFrame {
     private void initComponents() {
 
         labelBushidoFooter = new javax.swing.JLabel();
-        LogoBushido = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1000, 1000));
+        setMinimumSize(new java.awt.Dimension(500, 500));
 
         labelBushidoFooter.setFont(new java.awt.Font("Rodchenko Grotesk ML", 1, 24)); // NOI18N
         labelBushidoFooter.setForeground(new java.awt.Color(147, 150, 8));
         labelBushidoFooter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelBushidoFooter.setText("Bushido Dojo");
 
-        LogoBushido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/bushido_dojo/resources/logo.png"))); // NOI18N
-        LogoBushido.setText("jLabel1");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(773, 773, 773)
-                        .addComponent(labelBushidoFooter))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(224, 224, 224)
-                        .addComponent(LogoBushido, javax.swing.GroupLayout.PREFERRED_SIZE, 608, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(773, Short.MAX_VALUE)
+                .addComponent(labelBushidoFooter))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LogoBushido, javax.swing.GroupLayout.PREFERRED_SIZE, 413, Short.MAX_VALUE)
-                .addGap(99, 99, 99)
+                .addContainerGap(518, Short.MAX_VALUE)
                 .addComponent(labelBushidoFooter))
         );
 
@@ -102,7 +92,6 @@ public class jframeBushido_Dojo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel LogoBushido;
     private javax.swing.JLabel labelBushidoFooter;
     // End of variables declaration//GEN-END:variables
 }

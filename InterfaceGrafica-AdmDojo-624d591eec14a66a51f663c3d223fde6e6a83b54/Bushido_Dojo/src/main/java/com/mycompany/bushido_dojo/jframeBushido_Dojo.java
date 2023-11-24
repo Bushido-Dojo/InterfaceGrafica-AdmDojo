@@ -27,31 +27,83 @@ public class jframeBushido_Dojo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         labelBushidoFooter = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        botaoSair = new javax.swing.JButton();
+        botaoEntrar = new javax.swing.JButton();
+        senhaField = new javax.swing.JPasswordField();
+        idUsuarioField = new javax.swing.JFormattedTextField();
+        cpfField = new javax.swing.JFormattedTextField();
+        cpfLabel = new javax.swing.JLabel();
+        idUsuarioLabel = new javax.swing.JLabel();
+        senhaLabel = new javax.swing.JLabel();
+        labelLogo = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Bushido Dojo");
         setMaximumSize(new java.awt.Dimension(1000, 1000));
         setMinimumSize(new java.awt.Dimension(500, 500));
+        getContentPane().setLayout(null);
+
+        jPanel1.setBackground(new java.awt.Color(255, 197, 69));
+        jPanel1.setLayout(null);
 
         labelBushidoFooter.setFont(new java.awt.Font("Rodchenko Grotesk ML", 1, 24)); // NOI18N
         labelBushidoFooter.setForeground(new java.awt.Color(147, 150, 8));
         labelBushidoFooter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelBushidoFooter.setText("Bushido Dojo");
+        jPanel1.add(labelBushidoFooter);
+        labelBushidoFooter.setBounds(562, 473, 138, 27);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(773, Short.MAX_VALUE)
-                .addComponent(labelBushidoFooter))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(518, Short.MAX_VALUE)
-                .addComponent(labelBushidoFooter))
-        );
+        jPanel2.setLayout(null);
+
+        botaoSair.setBackground(new java.awt.Color(13, 32, 51));
+        botaoSair.setForeground(new java.awt.Color(255, 255, 255));
+        botaoSair.setText("Sair");
+        botaoSair.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.lightGray));
+        jPanel2.add(botaoSair);
+        botaoSair.setBounds(190, 380, 102, 36);
+
+        botaoEntrar.setBackground(new java.awt.Color(13, 32, 51));
+        botaoEntrar.setForeground(new java.awt.Color(255, 255, 255));
+        botaoEntrar.setText("Entrar");
+        botaoEntrar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.lightGray));
+        jPanel2.add(botaoEntrar);
+        botaoEntrar.setBounds(40, 380, 102, 36);
+        jPanel2.add(senhaField);
+        senhaField.setBounds(140, 260, 80, 22);
+        jPanel2.add(idUsuarioField);
+        idUsuarioField.setBounds(140, 210, 80, 22);
+        jPanel2.add(cpfField);
+        cpfField.setBounds(140, 170, 80, 20);
+
+        cpfLabel.setText("CPF");
+        jPanel2.add(cpfLabel);
+        cpfLabel.setBounds(80, 170, 41, 16);
+
+        idUsuarioLabel.setText("IdUsuario");
+        jPanel2.add(idUsuarioLabel);
+        idUsuarioLabel.setBounds(80, 210, 54, 16);
+
+        senhaLabel.setText("Senha:");
+        jPanel2.add(senhaLabel);
+        senhaLabel.setBounds(80, 260, 41, 16);
+
+        labelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/logo.png"))); // NOI18N
+        jPanel2.add(labelLogo);
+        labelLogo.setBounds(130, 20, 50, 60);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/BushidoDojo DomineODomDaArte.png"))); // NOI18N
+        jPanel2.add(jLabel1);
+        jLabel1.setBounds(10, 80, 320, 40);
+
+        jPanel1.add(jPanel2);
+        jPanel2.setBounds(30, 0, 310, 500);
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 700, 500);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -67,7 +119,7 @@ public class jframeBushido_Dojo extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -92,6 +144,18 @@ public class jframeBushido_Dojo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botaoEntrar;
+    private javax.swing.JButton botaoSair;
+    private javax.swing.JFormattedTextField cpfField;
+    private javax.swing.JLabel cpfLabel;
+    private javax.swing.JFormattedTextField idUsuarioField;
+    private javax.swing.JLabel idUsuarioLabel;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel labelBushidoFooter;
+    private javax.swing.JLabel labelLogo;
+    private javax.swing.JPasswordField senhaField;
+    private javax.swing.JLabel senhaLabel;
     // End of variables declaration//GEN-END:variables
 }

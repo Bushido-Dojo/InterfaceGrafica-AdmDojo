@@ -1,7 +1,8 @@
 package com.mycompany.bushido_dojo;
-import com.mycompany.bushido_dojo.Conexao;
+import bd.conexaoBD.*;
+import bd.conexaoBD.core.MeuResultSet;
 import java.awt.Color;
-import java.sql.*;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 /*
@@ -61,7 +62,7 @@ public class jframeBushido_Dojo extends javax.swing.JFrame {
         labelBushidoFooter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelBushidoFooter.setText("Bushido Dojo");
         jPanel1.add(labelBushidoFooter);
-        labelBushidoFooter.setBounds(562, 473, 138, 27);
+        labelBushidoFooter.setBounds(520, 430, 139, 27);
 
         jPanel2.setBackground(new java.awt.Color(100, 100, 100));
         jPanel2.setLayout(null);
@@ -179,28 +180,30 @@ private final Color TEXT_COLOR = Color.BLACK;
 
     private void botaoEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEntrarActionPerformed
                                            
-        Connection conexao = null;
-        PreparedStatement preparedStatement = null;
-        ResultSet resultSet = null;
 
         try {
+            
             String cpf = cpfField.getText();
             String usuario = idUsuarioField.getText();
             String senha = new String(senhaField.getPassword());
 
-            conexao = Conexao.obterConexao();
+            String query = "SELECT * FROM Karate.ADM WHERE username = ? AND cpf = ? AND senha = ?";
+            
+            BDSQLServer.COMANDO.prepareStatement (query);
+            
+            BDSQLServer.COMANDO.setString (1, usuario);
+            BDSQLServer.COMANDO.setString (2, cpf);       
+            BDSQLServer.COMANDO.setString (3, senha);
+            
+            MeuResultSet resultado = (MeuResultSet)BDSQLServer.COMANDO.executeQuery ();
+            
+          
 
-            String query = "SELECT * FROM Karate.ADM WHERE nome = ? AND cpf = ? AND senha = ?";
 
-            preparedStatement = conexao.prepareStatement(query);
 
-            preparedStatement.setString(1, usuario);
-            preparedStatement.setString(2, cpf);
-            preparedStatement.setString(3, senha);
+            
 
-            resultSet = preparedStatement.executeQuery();
-
-            if (resultSet.next()) {
+            if (resultado.next()) {
                 JOptionPane.showMessageDialog(this, "Usuário é um ADM.", "Alerta", JOptionPane.WARNING_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(this, "Usuário não encontrado ou inválido.", "Erro", JOptionPane.ERROR_MESSAGE);
@@ -208,24 +211,8 @@ private final Color TEXT_COLOR = Color.BLACK;
         } catch (SQLException e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Erro ao acessar o banco de dados.", "Erro", JOptionPane.ERROR_MESSAGE);
-        } finally {
-            // Close resources regardless of whether an exception occurred
-            try {
-                if (resultSet != null) {
-                    resultSet.close();
-                }
-                if (preparedStatement != null) {
-                    preparedStatement.close();
-                }
-                if (conexao != null) {
-                    conexao.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
         }
     
-
     }//GEN-LAST:event_botaoEntrarActionPerformed
 
     /**

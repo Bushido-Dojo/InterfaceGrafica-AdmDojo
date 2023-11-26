@@ -1,6 +1,8 @@
 package com.mycompany.bushido_dojo;
-
+import com.mycompany.bushido_dojo.Conexao;
 import java.awt.Color;
+import java.sql.*;
+import javax.swing.JOptionPane;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -47,7 +49,8 @@ public class jframeBushido_Dojo extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Bushido Dojo");
         setMaximumSize(new java.awt.Dimension(1000, 1000));
-        setMinimumSize(new java.awt.Dimension(500, 500));
+        setMinimumSize(new java.awt.Dimension(700, 500));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(13, 32, 51));
@@ -67,6 +70,11 @@ public class jframeBushido_Dojo extends javax.swing.JFrame {
         botaoSair.setForeground(new java.awt.Color(255, 255, 255));
         botaoSair.setText("Sair");
         botaoSair.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.lightGray));
+        botaoSair.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botaoSairMouseClicked(evt);
+            }
+        });
         jPanel2.add(botaoSair);
         botaoSair.setBounds(190, 380, 102, 36);
 
@@ -74,16 +82,21 @@ public class jframeBushido_Dojo extends javax.swing.JFrame {
         botaoEntrar.setForeground(new java.awt.Color(255, 255, 255));
         botaoEntrar.setText("Entrar");
         botaoEntrar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.lightGray));
+        botaoEntrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoEntrarActionPerformed(evt);
+            }
+        });
         jPanel2.add(botaoEntrar);
         botaoEntrar.setBounds(40, 380, 102, 36);
 
-        labelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/logo.png"))); // NOI18N
+        labelLogo.setIcon(new javax.swing.ImageIcon("C:\\Users\\dudac\\Downloads\\github praticas\\InterfaceGrafica-AdmDojo\\InterfaceGrafica-AdmDojo-624d591eec14a66a51f663c3d223fde6e6a83b54\\Bushido_Dojo\\src\\main\\java\\Imagens\\logo.png")); // NOI18N
         jPanel2.add(labelLogo);
         labelLogo.setBounds(130, 20, 50, 60);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/BushidoDojo DomineODomDaArte.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\dudac\\Downloads\\github praticas\\InterfaceGrafica-AdmDojo\\InterfaceGrafica-AdmDojo-624d591eec14a66a51f663c3d223fde6e6a83b54\\Bushido_Dojo\\src\\main\\java\\Imagens\\BushidoDojo DomineODomDaArte.png")); // NOI18N
         jPanel2.add(jLabel1);
-        jLabel1.setBounds(10, 80, 320, 40);
+        jLabel1.setBounds(10, 80, 300, 40);
 
         jPanel5.setLayout(null);
 
@@ -137,23 +150,83 @@ public class jframeBushido_Dojo extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+private boolean isPlaceholderActive = true;
+private final String PLACEHOLDER_TEXT = "Digite o Usuário";
+private final Color PLACEHOLDER_COLOR = new Color(153, 153, 153);
+private final Color TEXT_COLOR = Color.BLACK;
+
     private void idUsuarioFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_idUsuarioFieldFocusGained
-        if(idUsuarioField.getText().equals("Digite o Usuário"))
-        {
-            idUsuarioField.setText("");
-            idUsuarioField.setForeground(new Color(153,153,153));
-            
+        if (isPlaceholderActive && idUsuarioField.getText().equals(PLACEHOLDER_TEXT)) {
+        idUsuarioField.setText("");
+        idUsuarioField.setForeground(TEXT_COLOR);
         }
     }//GEN-LAST:event_idUsuarioFieldFocusGained
 
     private void idUsuarioFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_idUsuarioFieldFocusLost
-        if(idUsuarioField.getText().equals(""))
-        {
-            idUsuarioField.setText("Digite o Usuário");
-            idUsuarioField.setForeground(new Color(0,0,0));
-            
+    if (idUsuarioField.getText().isEmpty()) {
+        isPlaceholderActive = true;
+        idUsuarioField.setText(PLACEHOLDER_TEXT);
+        idUsuarioField.setForeground(PLACEHOLDER_COLOR);
+    } else {
+        isPlaceholderActive = false;
+        idUsuarioField.setForeground(TEXT_COLOR);
         }
     }//GEN-LAST:event_idUsuarioFieldFocusLost
+
+    private void botaoSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoSairMouseClicked
+        this.dispose();
+    }//GEN-LAST:event_botaoSairMouseClicked
+
+    private void botaoEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEntrarActionPerformed
+                                           
+        Connection conexao = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+
+        try {
+            String cpf = cpfField.getText();
+            String usuario = idUsuarioField.getText();
+            String senha = new String(senhaField.getPassword());
+
+            conexao = Conexao.obterConexao();
+
+            String query = "SELECT * FROM Karate.ADM WHERE nome = ? AND cpf = ? AND senha = ?";
+
+            preparedStatement = conexao.prepareStatement(query);
+
+            preparedStatement.setString(1, usuario);
+            preparedStatement.setString(2, cpf);
+            preparedStatement.setString(3, senha);
+
+            resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                JOptionPane.showMessageDialog(this, "Usuário é um ADM.", "Alerta", JOptionPane.WARNING_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "Usuário não encontrado ou inválido.", "Erro", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Erro ao acessar o banco de dados.", "Erro", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            // Close resources regardless of whether an exception occurred
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (preparedStatement != null) {
+                    preparedStatement.close();
+                }
+                if (conexao != null) {
+                    conexao.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    
+
+    }//GEN-LAST:event_botaoEntrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -166,7 +239,7 @@ public class jframeBushido_Dojo extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }

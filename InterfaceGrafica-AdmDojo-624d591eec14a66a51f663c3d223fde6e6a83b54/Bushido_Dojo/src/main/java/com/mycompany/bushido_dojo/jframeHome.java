@@ -5,6 +5,7 @@
 package com.mycompany.bushido_dojo;
 import bd.conexaoBD.*;
 import bd.conexaoBD.core.*;
+import bdfuncionalidades.*;
 import com.mycompany.bushido_dojo.jframeBushido_Dojo.*;
 import javax.swing.JLabel;
 /**
@@ -24,7 +25,10 @@ public class jframeHome extends javax.swing.JFrame {
     public jframeHome(String username) {
         initComponents();
         atualizaLabel (labelUsername, username);
+        PreencheTabelas preencheTabelas = new PreencheTabelas();
+        preencheTabelas.preencherTabela(jtableHorarios, "SELECT * FROM Karate.viewHorariosJava");
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -38,9 +42,16 @@ public class jframeHome extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        labelMiyagi = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jtableHorarios = new javax.swing.JTable();
         labelUsername = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTableHorarios = new javax.swing.JTable();
+        labelHorarios = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        botaoSair = new javax.swing.JButton();
+        botaoSair1 = new javax.swing.JButton();
+        botaoSair2 = new javax.swing.JButton();
+        labelMiyagi2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -66,39 +77,87 @@ public class jframeHome extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(251, 136, 52));
         jLabel2.setText("Bem Vindo!");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(90, 70, 140, 30);
+        jLabel2.setBounds(90, 40, 140, 30);
+
+        labelMiyagi.setFont(new java.awt.Font("Atletico Bold", 0, 14)); // NOI18N
+        labelMiyagi.setForeground(new java.awt.Color(255, 255, 255));
+        labelMiyagi.setText("Senhor Miyagi, interpretado por Pat Morita - \"Karate Kid\" (1984).");
+        jPanel1.add(labelMiyagi);
+        labelMiyagi.setBounds(290, 390, 490, 30);
+
+        jtableHorarios.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jtableHorarios);
+
+        jPanel1.add(jScrollPane2);
+        jScrollPane2.setBounds(110, 160, 520, 90);
 
         labelUsername.setFont(new java.awt.Font("Atletico Bold", 1, 24)); // NOI18N
         labelUsername.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(labelUsername);
-        labelUsername.setBounds(240, 70, 450, 30);
+        labelUsername.setBounds(240, 40, 450, 30);
 
-        jScrollPane1.setBackground(new java.awt.Color(242, 242, 242));
+        labelHorarios.setFont(new java.awt.Font("Atletico Bold", 1, 24)); // NOI18N
+        labelHorarios.setForeground(new java.awt.Color(251, 136, 52));
+        labelHorarios.setText("Horarios da Semana");
+        jPanel1.add(labelHorarios);
+        labelHorarios.setBounds(110, 120, 260, 50);
 
-        jTableHorarios.setBackground(new java.awt.Color(197, 197, 197));
-        jTableHorarios.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.white, java.awt.Color.darkGray));
-        jTableHorarios.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {},
-                {},
-                {},
-                {}
-            },
-            new String [] {
+        jPanel2.setLayout(null);
 
+        botaoSair.setBackground(new java.awt.Color(13, 32, 51));
+        botaoSair.setForeground(new java.awt.Color(255, 255, 255));
+        botaoSair.setText("Sair");
+        botaoSair.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.lightGray));
+        botaoSair.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botaoSairMouseClicked(evt);
             }
-        ));
-        jTableHorarios.setGridColor(new java.awt.Color(255, 102, 0));
-        jScrollPane1.setViewportView(jTableHorarios);
-        if (jTableHorarios.getColumnModel().getColumnCount() > 0) {
-            jTableHorarios.getColumnModel().getColumn(0).setHeaderValue("Title 1");
-            jTableHorarios.getColumnModel().getColumn(1).setHeaderValue("Title 2");
-            jTableHorarios.getColumnModel().getColumn(2).setHeaderValue("Title 3");
-            jTableHorarios.getColumnModel().getColumn(3).setHeaderValue("Title 4");
-        }
+        });
+        jPanel2.add(botaoSair);
+        botaoSair.setBounds(190, 380, 102, 36);
 
-        jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(80, 250, 590, 240);
+        botaoSair1.setBackground(new java.awt.Color(13, 32, 51));
+        botaoSair1.setForeground(new java.awt.Color(255, 255, 255));
+        botaoSair1.setText("Sair");
+        botaoSair1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.lightGray));
+        botaoSair1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botaoSair1MouseClicked(evt);
+            }
+        });
+        jPanel2.add(botaoSair1);
+        botaoSair1.setBounds(190, 380, 102, 36);
+
+        botaoSair2.setBackground(new java.awt.Color(13, 32, 51));
+        botaoSair2.setForeground(new java.awt.Color(255, 255, 255));
+        botaoSair2.setText("Sair");
+        botaoSair2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.lightGray));
+        botaoSair2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botaoSair2MouseClicked(evt);
+            }
+        });
+        jPanel2.add(botaoSair2);
+        botaoSair2.setBounds(220, 20, 320, 30);
+
+        jPanel1.add(jPanel2);
+        jPanel2.setBounds(0, 480, 800, 80);
+
+        labelMiyagi2.setFont(new java.awt.Font("Atletico Bold", 1, 24)); // NOI18N
+        labelMiyagi2.setForeground(new java.awt.Color(255, 255, 255));
+        labelMiyagi2.setText("\"Manter a mente quieta, a espinha ereta e o coração tranquilo.\"");
+        jPanel1.add(labelMiyagi2);
+        labelMiyagi2.setBounds(10, 340, 790, 50);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 800, 570);
@@ -133,6 +192,18 @@ public class jframeHome extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void botaoSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoSairMouseClicked
+        this.dispose();
+    }//GEN-LAST:event_botaoSairMouseClicked
+
+    private void botaoSair1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoSair1MouseClicked
+        this.dispose();
+    }//GEN-LAST:event_botaoSair1MouseClicked
+
+    private void botaoSair2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoSair2MouseClicked
+        this.dispose();
+    }//GEN-LAST:event_botaoSair2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -178,6 +249,9 @@ public class jframeHome extends javax.swing.JFrame {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botaoSair;
+    private javax.swing.JButton botaoSair1;
+    private javax.swing.JButton botaoSair2;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
@@ -190,8 +264,12 @@ public class jframeHome extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTableHorarios;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jtableHorarios;
+    private javax.swing.JLabel labelHorarios;
+    private javax.swing.JLabel labelMiyagi;
+    private javax.swing.JLabel labelMiyagi2;
     private javax.swing.JLabel labelUsername;
     // End of variables declaration//GEN-END:variables
 }

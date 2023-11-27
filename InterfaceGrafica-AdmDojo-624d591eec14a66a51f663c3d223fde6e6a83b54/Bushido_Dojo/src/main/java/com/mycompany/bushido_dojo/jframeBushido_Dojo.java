@@ -184,14 +184,14 @@ private final Color TEXT_COLOR = Color.BLACK;
         try {
             
             String cpf = cpfField.getText();
-            String usuario = idUsuarioField.getText();
+            String username = idUsuarioField.getText();
             String senha = new String(senhaField.getPassword());
 
             String query = "SELECT * FROM Karate.ADM WHERE username = ? AND cpf = ? AND senha = ?";
             
             BDSQLServer.COMANDO.prepareStatement (query);
             
-            BDSQLServer.COMANDO.setString (1, usuario);
+            BDSQLServer.COMANDO.setString (1, username);
             BDSQLServer.COMANDO.setString (2, cpf);       
             BDSQLServer.COMANDO.setString (3, senha);
             
@@ -205,6 +205,8 @@ private final Color TEXT_COLOR = Color.BLACK;
 
             if (resultado.next()) {
                 JOptionPane.showMessageDialog(this, "Usuário é um ADM.", "Alerta", JOptionPane.WARNING_MESSAGE);
+                new jframeHome(username).setVisible(true);
+                this.dispose();     
             } else {
                 JOptionPane.showMessageDialog(this, "Usuário não encontrado ou inválido.", "Erro", JOptionPane.ERROR_MESSAGE);
             }

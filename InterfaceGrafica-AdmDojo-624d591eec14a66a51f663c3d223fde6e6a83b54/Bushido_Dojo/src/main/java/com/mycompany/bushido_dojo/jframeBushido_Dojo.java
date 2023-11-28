@@ -188,7 +188,6 @@ private final Color TEXT_COLOR = Color.BLACK;
                                            
 
         try {
-            
             String cpf = cpfField.getText();
             String username = idUsuarioField.getText();
             String senha = new String(senhaField.getPassword());
@@ -235,6 +234,9 @@ private final Color TEXT_COLOR = Color.BLACK;
         JButton toggleSenhaButton = new JButton(new ImageIcon(olho_fechado)); // Começa com o ícone de olho fechado
         toggleSenhaButton.setBounds(230, 110, 20, 20);
         jPanel5.add(toggleSenhaButton);
+        toggleSenhaButton.setContentAreaFilled(false);
+        toggleSenhaButton.setBorderPainted(false);
+        toggleSenhaButton.setFocusPainted(false);
 
         toggleSenhaButton.addActionListener(new ActionListener() {
             @Override
@@ -242,9 +244,15 @@ private final Color TEXT_COLOR = Color.BLACK;
                 if (esconde) {
                     senhaField.setEchoChar((char) 0); // Mostra a senha
                     toggleSenhaButton.setIcon(new ImageIcon(olho_aberto)); // Altera o ícone para olho aberto
+                    toggleSenhaButton.setContentAreaFilled(false);
+                    toggleSenhaButton.setBorderPainted(false);
+                    toggleSenhaButton.setFocusPainted(false);
                 } else {
                     senhaField.setEchoChar('*'); // Esconde a senha
                     toggleSenhaButton.setIcon(new ImageIcon(olho_fechado)); // Altera o ícone para olho fechado
+                    toggleSenhaButton.setContentAreaFilled(false);
+                    toggleSenhaButton.setBorderPainted(false);
+                    toggleSenhaButton.setFocusPainted(false);
                 }
                 esconde = !esconde; // Inverte o estado de esconde
             }
@@ -262,7 +270,7 @@ private final Color TEXT_COLOR = Color.BLACK;
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
+                if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }

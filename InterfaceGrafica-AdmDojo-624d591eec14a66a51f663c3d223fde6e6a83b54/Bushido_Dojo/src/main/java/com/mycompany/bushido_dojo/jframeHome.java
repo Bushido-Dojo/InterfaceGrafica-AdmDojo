@@ -6,6 +6,7 @@ package com.mycompany.bushido_dojo;
 import bd.conexaoBD.*;
 import bd.conexaoBD.core.*;
 import bdfuncionalidades.*;
+import com.mycompany.bushido_dojo.Cadastros.jframeCadastroAlunos;
 import com.mycompany.bushido_dojo.jframeBushido_Dojo.*;
 import javax.swing.JLabel;
 /**
@@ -47,11 +48,9 @@ public class jframeHome extends javax.swing.JFrame {
         jtableHorarios = new javax.swing.JTable();
         labelUsername = new javax.swing.JLabel();
         labelHorarios = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        botaoSair = new javax.swing.JButton();
-        botaoSair1 = new javax.swing.JButton();
-        botaoSair2 = new javax.swing.JButton();
         labelMiyagi2 = new javax.swing.JLabel();
+        jpanel_Borda_Arredondada1 = new procedimentos.jpanel_Borda_Arredondada();
+        botaoSair2 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -112,31 +111,13 @@ public class jframeHome extends javax.swing.JFrame {
         jPanel1.add(labelHorarios);
         labelHorarios.setBounds(110, 120, 260, 50);
 
-        jPanel2.setLayout(null);
+        labelMiyagi2.setFont(new java.awt.Font("Atletico Bold", 1, 24)); // NOI18N
+        labelMiyagi2.setForeground(new java.awt.Color(255, 255, 255));
+        labelMiyagi2.setText("\"Manter a mente quieta, a espinha ereta e o coração tranquilo.\"");
+        jPanel1.add(labelMiyagi2);
+        labelMiyagi2.setBounds(10, 340, 790, 50);
 
-        botaoSair.setBackground(new java.awt.Color(13, 32, 51));
-        botaoSair.setForeground(new java.awt.Color(255, 255, 255));
-        botaoSair.setText("Sair");
-        botaoSair.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.lightGray));
-        botaoSair.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botaoSairMouseClicked(evt);
-            }
-        });
-        jPanel2.add(botaoSair);
-        botaoSair.setBounds(190, 380, 102, 36);
-
-        botaoSair1.setBackground(new java.awt.Color(13, 32, 51));
-        botaoSair1.setForeground(new java.awt.Color(255, 255, 255));
-        botaoSair1.setText("Sair");
-        botaoSair1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.lightGray));
-        botaoSair1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botaoSair1MouseClicked(evt);
-            }
-        });
-        jPanel2.add(botaoSair1);
-        botaoSair1.setBounds(190, 380, 102, 36);
+        jpanel_Borda_Arredondada1.setLayout(null);
 
         botaoSair2.setBackground(new java.awt.Color(13, 32, 51));
         botaoSair2.setForeground(new java.awt.Color(255, 255, 255));
@@ -147,17 +128,11 @@ public class jframeHome extends javax.swing.JFrame {
                 botaoSair2MouseClicked(evt);
             }
         });
-        jPanel2.add(botaoSair2);
-        botaoSair2.setBounds(220, 20, 320, 30);
+        jpanel_Borda_Arredondada1.add(botaoSair2);
+        botaoSair2.setBounds(250, 20, 250, 30);
 
-        jPanel1.add(jPanel2);
-        jPanel2.setBounds(0, 480, 800, 80);
-
-        labelMiyagi2.setFont(new java.awt.Font("Atletico Bold", 1, 24)); // NOI18N
-        labelMiyagi2.setForeground(new java.awt.Color(255, 255, 255));
-        labelMiyagi2.setText("\"Manter a mente quieta, a espinha ereta e o coração tranquilo.\"");
-        jPanel1.add(labelMiyagi2);
-        labelMiyagi2.setBounds(10, 340, 790, 50);
+        jPanel1.add(jpanel_Borda_Arredondada1);
+        jpanel_Borda_Arredondada1.setBounds(0, 470, 800, 70);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 800, 570);
@@ -165,6 +140,11 @@ public class jframeHome extends javax.swing.JFrame {
         jMenu1.setText("Cadastrar");
 
         jMenuItem1.setText("Aluno");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem1);
 
         jMenuItem3.setText("Professor");
@@ -193,13 +173,10 @@ public class jframeHome extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botaoSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoSairMouseClicked
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        new jframeCadastroAlunos().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_botaoSairMouseClicked
-
-    private void botaoSair1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoSair1MouseClicked
-        this.dispose();
-    }//GEN-LAST:event_botaoSair1MouseClicked
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void botaoSair2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoSair2MouseClicked
         this.dispose();
@@ -249,8 +226,6 @@ public class jframeHome extends javax.swing.JFrame {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botaoSair;
-    private javax.swing.JButton botaoSair1;
     private javax.swing.JButton botaoSair2;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
@@ -264,8 +239,8 @@ public class jframeHome extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
+    private procedimentos.jpanel_Borda_Arredondada jpanel_Borda_Arredondada1;
     private javax.swing.JTable jtableHorarios;
     private javax.swing.JLabel labelHorarios;
     private javax.swing.JLabel labelMiyagi;

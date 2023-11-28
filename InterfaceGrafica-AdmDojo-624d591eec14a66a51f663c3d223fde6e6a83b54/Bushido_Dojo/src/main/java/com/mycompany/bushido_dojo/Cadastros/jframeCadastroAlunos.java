@@ -367,6 +367,7 @@ public class jframeCadastroAlunos extends javax.swing.JFrame {
                     java.sql.Date sqldataNascimento = new java.sql.Date(dataNascimento.getTime());
                     BDSQLServer.COMANDO.setDate(7,sqldataNascimento);   
                     BDSQLServer.COMANDO.execute();
+                    BDSQLServer.COMANDO.commit();
                     BDSQLServer.COMANDO.close();
                     JOptionPane.showMessageDialog(this, "Aluno Cadastrado..", "Alerta", JOptionPane.WARNING_MESSAGE);
                 }

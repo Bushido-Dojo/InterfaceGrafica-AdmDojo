@@ -18,14 +18,9 @@ public class jframeHome extends javax.swing.JFrame {
     /**
      * Creates new form jframeHome
      */
-    private static String username;
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-    public jframeHome(String username) {
+    
+    public jframeHome() {
         initComponents();
-        atualizaLabel (labelUsername, username);
         PreencheTabelas preencheTabelas = new PreencheTabelas();
         preencheTabelas.preencherTabela(jtableHorarios, "SELECT * FROM Karate.viewHorariosJava");
     }
@@ -46,7 +41,6 @@ public class jframeHome extends javax.swing.JFrame {
         labelMiyagi = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jtableHorarios = new javax.swing.JTable();
-        labelUsername = new javax.swing.JLabel();
         labelHorarios = new javax.swing.JLabel();
         labelMiyagi2 = new javax.swing.JLabel();
         jpanel_Borda_Arredondada1 = new procedimentos.jpanel_Borda_Arredondada();
@@ -99,11 +93,6 @@ public class jframeHome extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane2);
         jScrollPane2.setBounds(110, 160, 520, 90);
-
-        labelUsername.setFont(new java.awt.Font("Atletico Bold", 1, 24)); // NOI18N
-        labelUsername.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(labelUsername);
-        labelUsername.setBounds(240, 40, 450, 30);
 
         labelHorarios.setFont(new java.awt.Font("Atletico Bold", 1, 24)); // NOI18N
         labelHorarios.setForeground(new java.awt.Color(251, 136, 52));
@@ -185,9 +174,6 @@ public class jframeHome extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    private void atualizaLabel(JLabel label, String texto) {
-        label.setText(texto);
-    }
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -216,7 +202,7 @@ public class jframeHome extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() { 
-                jframeHome jframeHomeWindow = new jframeHome(username);
+                jframeHome jframeHomeWindow = new jframeHome();
                 jframeHomeWindow.setVisible(true);
 
             }
@@ -245,6 +231,5 @@ public class jframeHome extends javax.swing.JFrame {
     private javax.swing.JLabel labelHorarios;
     private javax.swing.JLabel labelMiyagi;
     private javax.swing.JLabel labelMiyagi2;
-    private javax.swing.JLabel labelUsername;
     // End of variables declaration//GEN-END:variables
 }

@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 import javax.swing.*;
 import procedimentos.*;
 import bd.conexaoBD.BDSQLServer;
+import com.mycompany.bushido_dojo.jframeHome;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
@@ -61,15 +62,7 @@ public class jframeCadastroAlunos extends javax.swing.JFrame {
         labelAlunos = new javax.swing.JLabel();
         labelCadastro = new javax.swing.JLabel();
         botaoCadastro = new javax.swing.JButton();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
+        jbotaoSairHome = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 600));
@@ -145,33 +138,35 @@ public class jframeCadastroAlunos extends javax.swing.JFrame {
         jpanel_Borda_Arredondada1Layout.setHorizontalGroup(
             jpanel_Borda_Arredondada1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpanel_Borda_Arredondada1Layout.createSequentialGroup()
-                .addGap(50, 50, 50)
                 .addGroup(jpanel_Borda_Arredondada1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpanel_Borda_Arredondada1Layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
                         .addGroup(jpanel_Borda_Arredondada1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelNome, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelCpf1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(30, 30, 30)
-                        .addGroup(jpanel_Borda_Arredondada1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jFieldCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jpanel_Borda_Arredondada1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanel_Borda_Arredondada1Layout.createSequentialGroup()
-                                .addComponent(labelNome3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanel_Borda_Arredondada1Layout.createSequentialGroup()
-                                .addComponent(labelEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(34, 34, 34))))
+                            .addGroup(jpanel_Borda_Arredondada1Layout.createSequentialGroup()
+                                .addGroup(jpanel_Borda_Arredondada1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelNome, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelCpf1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(30, 30, 30)
+                                .addGroup(jpanel_Borda_Arredondada1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jFieldCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jpanel_Borda_Arredondada1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanel_Borda_Arredondada1Layout.createSequentialGroup()
+                                        .addComponent(labelNome3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanel_Borda_Arredondada1Layout.createSequentialGroup()
+                                        .addComponent(labelEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(34, 34, 34))))
+                            .addGroup(jpanel_Borda_Arredondada1Layout.createSequentialGroup()
+                                .addComponent(labelFaixa, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20)
+                                .addComponent(jComboBoxFaixas, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(labelCelular1)
+                                .addGap(18, 18, 18))))
                     .addGroup(jpanel_Borda_Arredondada1Layout.createSequentialGroup()
-                        .addComponent(labelFaixa, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)
-                        .addComponent(jComboBoxFaixas, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(labelCelular1)
-                        .addGap(18, 18, 18))
-                    .addGroup(jpanel_Borda_Arredondada1Layout.createSequentialGroup()
-                        .addGap(131, 131, 131)
+                        .addGap(181, 181, 181)
                         .addGroup(jpanel_Borda_Arredondada1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jpanel_Borda_Arredondada1Layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
@@ -248,35 +243,19 @@ public class jframeCadastroAlunos extends javax.swing.JFrame {
             }
         });
         jPanel1.add(botaoCadastro);
-        botaoCadastro.setBounds(330, 410, 90, 80);
+        botaoCadastro.setBounds(350, 410, 60, 60);
 
-        jMenu1.setText("Cadastrar");
-
-        jMenuItem1.setText("Aluno");
-        jMenu1.add(jMenuItem1);
-
-        jMenuItem3.setText("Professor");
-        jMenu1.add(jMenuItem3);
-
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Editar");
-
-        jMenuItem4.setText("Matrícula");
-        jMenu2.add(jMenuItem4);
-
-        jMenuItem5.setText("Aluno");
-        jMenu2.add(jMenuItem5);
-
-        jMenuItem6.setText("Horarios");
-        jMenu2.add(jMenuItem6);
-
-        jMenuItem7.setText("Professor");
-        jMenu2.add(jMenuItem7);
-
-        jMenuBar1.add(jMenu2);
-
-        setJMenuBar(jMenuBar1);
+        jbotaoSairHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/home.png"))); // NOI18N
+        jbotaoSairHome.setBorderPainted(false);
+        jbotaoSairHome.setContentAreaFilled(false);
+        jbotaoSairHome.setFocusPainted(false);
+        jbotaoSairHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbotaoSairHomeActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jbotaoSairHome);
+        jbotaoSairHome.setBounds(40, 470, 76, 70);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -286,7 +265,7 @@ public class jframeCadastroAlunos extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE)
         );
 
         pack();
@@ -327,6 +306,7 @@ public class jframeCadastroAlunos extends javax.swing.JFrame {
         String corSelecionada = jComboBoxFaixas.getSelectedItem().toString();
         if(corSelecionada.equals("Selecione a Faixa")){
             JOptionPane.showMessageDialog(this, "Por favor, selecione uma faixa válida.", "Erro", JOptionPane.ERROR_MESSAGE);
+            return;
         }
         switch (corSelecionada) {
             case "Branca" -> idFaixa = 0;
@@ -337,13 +317,7 @@ public class jframeCadastroAlunos extends javax.swing.JFrame {
             case "Roxa" -> idFaixa=5;
             case "Marrom" -> idFaixa=6;
             case "Preta" -> idFaixa=7;
-            default -> {
-                JOptionPane.showMessageDialog(this, "Faixa Inválida.", "Erro", JOptionPane.ERROR_MESSAGE);
-            }
-        }
-        
-        if(idFaixa == -1){
-            JOptionPane.showMessageDialog(this, "Por favor, selecione uma faixa válida.", "Erro", JOptionPane.ERROR_MESSAGE);
+            default -> {}
         }
         
         if(nome.isEmpty()||cpf.isEmpty()||sobrenome.isEmpty()||email.isEmpty()||celular.isEmpty())
@@ -368,12 +342,13 @@ public class jframeCadastroAlunos extends javax.swing.JFrame {
                     BDSQLServer.COMANDO.setDate(7,sqldataNascimento);   
                     BDSQLServer.COMANDO.execute();
                     BDSQLServer.COMANDO.commit();
-                    BDSQLServer.COMANDO.close();
                     JOptionPane.showMessageDialog(this, "Aluno Cadastrado..", "Alerta", JOptionPane.WARNING_MESSAGE);
+                    new jframeCadastroAlunos().setVisible(true);
+                    this.dispose();
+                    
                 }
                 else{
                     JOptionPane.showMessageDialog(this, "Por favor, selecione uma Data de Nascimento válida.", "Erro", JOptionPane.ERROR_MESSAGE);
-  
                 }
                 
             } catch (SQLException ex) {
@@ -384,6 +359,11 @@ public class jframeCadastroAlunos extends javax.swing.JFrame {
   
         
     }//GEN-LAST:event_botaoCadastroActionPerformed
+
+    private void jbotaoSairHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbotaoSairHomeActionPerformed
+        new jframeHome().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jbotaoSairHomeActionPerformed
 
     
     public static void main(String args[]) {
@@ -428,16 +408,8 @@ public class jframeCadastroAlunos extends javax.swing.JFrame {
     private javax.swing.JTextField jFieldEmail;
     private javax.swing.JFormattedTextField jFieldNome;
     private javax.swing.JFormattedTextField jFieldSobrenome;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton jbotaoSairHome;
     private procedimentos.jpanel_Borda_Arredondada jpanel_Borda_Arredondada1;
     private procedimentos.jpanel_Borda_Arredondada jpanel_Borda_Arredondada3;
     private javax.swing.JLabel labelAlunos;

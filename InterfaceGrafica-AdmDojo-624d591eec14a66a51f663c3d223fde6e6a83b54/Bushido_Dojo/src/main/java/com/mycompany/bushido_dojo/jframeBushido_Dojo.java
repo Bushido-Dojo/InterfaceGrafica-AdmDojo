@@ -52,6 +52,7 @@ public class jframeBushido_Dojo extends javax.swing.JFrame {
         idUsuarioField = new javax.swing.JFormattedTextField();
         cpfLabel = new javax.swing.JLabel();
         cpfField = new javax.swing.JFormattedTextField();
+        jLabelBushido = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Bushido Dojo");
@@ -96,14 +97,12 @@ public class jframeBushido_Dojo extends javax.swing.JFrame {
         });
         jPanel2.add(botaoEntrar);
         botaoEntrar.setBounds(40, 380, 102, 36);
-
-        labelLogo.setIcon(new javax.swing.ImageIcon("C:\\Users\\dudac\\Downloads\\github praticas\\InterfaceGrafica-AdmDojo\\InterfaceGrafica-AdmDojo-624d591eec14a66a51f663c3d223fde6e6a83b54\\Bushido_Dojo\\src\\main\\java\\Imagens\\logo.png")); // NOI18N
         jPanel2.add(labelLogo);
-        labelLogo.setBounds(130, 20, 50, 60);
+        labelLogo.setBounds(130, 20, 0, 60);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\dudac\\Downloads\\github praticas\\InterfaceGrafica-AdmDojo\\InterfaceGrafica-AdmDojo-624d591eec14a66a51f663c3d223fde6e6a83b54\\Bushido_Dojo\\src\\main\\java\\Imagens\\BushidoDojo DomineODomDaArte.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/BushidoDojo DomineODomDaArte.png"))); // NOI18N
         jPanel2.add(jLabel1);
-        jLabel1.setBounds(10, 80, 300, 40);
+        jLabel1.setBounds(0, 80, 310, 40);
 
         jPanel5.setLayout(null);
 
@@ -147,6 +146,10 @@ public class jframeBushido_Dojo extends javax.swing.JFrame {
 
         jPanel2.add(jPanel5);
         jPanel5.setBounds(0, 150, 310, 180);
+
+        jLabelBushido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/logo.png"))); // NOI18N
+        jPanel2.add(jLabelBushido);
+        jLabelBushido.setBounds(130, 10, 50, 60);
 
         jPanel1.add(jPanel2);
         jPanel2.setBounds(30, 0, 310, 500);
@@ -210,7 +213,7 @@ private final Color TEXT_COLOR = Color.BLACK;
 
             if (resultado.next()) {
                 JOptionPane.showMessageDialog(this, "Usuário é um ADM.", "Alerta", JOptionPane.WARNING_MESSAGE);
-                new jframeHome(username).setVisible(true);
+                new jframeHome().setVisible(true);
                 this.dispose();     
             } else {
                 JOptionPane.showMessageDialog(this, "Usuário não encontrado ou inválido.", "Erro", JOptionPane.ERROR_MESSAGE);
@@ -229,8 +232,8 @@ private final Color TEXT_COLOR = Color.BLACK;
     
     
     private void addToggleSenhaButton() {
-        olho_aberto = new ImageIcon("C:\\Users\\dudac\\Downloads\\github praticas\\InterfaceGrafica-AdmDojo\\InterfaceGrafica-AdmDojo-624d591eec14a66a51f663c3d223fde6e6a83b54\\Bushido_Dojo\\src\\main\\java\\Imagens\\eye.png").getImage();   
-        olho_fechado =new ImageIcon("C:\\Users\\dudac\\Downloads\\github praticas\\InterfaceGrafica-AdmDojo\\InterfaceGrafica-AdmDojo-624d591eec14a66a51f663c3d223fde6e6a83b54\\Bushido_Dojo\\src\\main\\java\\Imagens\\eye_hide.png").getImage();
+        olho_aberto = new ImageIcon("C:\\Users\\dudac\\OneDrive\\Documentos\\JOAO COTUCA\\github praticas\\InterfaceGrafica-AdmDojo\\InterfaceGrafica-AdmDojo-624d591eec14a66a51f663c3d223fde6e6a83b54\\Bushido_Dojo\\src\\main\\java\\Imagens\\eye.png").getImage();
+        olho_fechado = new ImageIcon("C:\\Users\\dudac\\OneDrive\\Documentos\\JOAO COTUCA\\github praticas\\InterfaceGrafica-AdmDojo\\InterfaceGrafica-AdmDojo-624d591eec14a66a51f663c3d223fde6e6a83b54\\Bushido_Dojo\\src\\main\\java\\Imagens\\eye_hide.png").getImage();
         JButton toggleSenhaButton = new JButton(new ImageIcon(olho_fechado)); // Começa com o ícone de olho fechado
         toggleSenhaButton.setBounds(230, 110, 20, 20);
         jPanel5.add(toggleSenhaButton);
@@ -302,6 +305,7 @@ private final Color TEXT_COLOR = Color.BLACK;
     private javax.swing.JFormattedTextField idUsuarioField;
     private javax.swing.JLabel idUsuarioLabel;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabelBushido;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;

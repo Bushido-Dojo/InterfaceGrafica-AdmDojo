@@ -4,16 +4,24 @@
  */
 package com.mycompany.bushido_dojo.Cadastros;
 
+import bd.conexaoBD.BDSQLServer;
+import com.mycompany.bushido_dojo.jframeHome;
+import java.awt.event.KeyEvent;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author dudac
  */
-public class jframeCdastroProfessor extends javax.swing.JFrame {
+public class jframeCadastroProfessor extends javax.swing.JFrame {
 
     /**
-     * Creates new form jframeCdastroProfessor
+     * Creates new form jframeCadastroProfessor
      */
-    public jframeCdastroProfessor() {
+    public jframeCadastroProfessor() {
         initComponents();
     }
 
@@ -26,21 +34,244 @@ public class jframeCdastroProfessor extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jPanel1 = new javax.swing.JPanel();
+        jpanel_Borda_Arredondada1 = new procedimentos.jpanel_Borda_Arredondada();
+        labelCadastro = new javax.swing.JLabel();
+        labelAlunos = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jFieldNome = new javax.swing.JFormattedTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jFieldSobrenome = new javax.swing.JFormattedTextField();
+        jFieldCpf = new javax.swing.JFormattedTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jcomboboxSexo = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        jFieldTelefone = new javax.swing.JFormattedTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jpanel_Borda_Arredondada2 = new procedimentos.jpanel_Borda_Arredondada();
+        jBotaoCadastrarProf = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jpanel_Borda_Arredondada3 = new procedimentos.jpanel_Borda_Arredondada();
+        jBotaoSairParaHome = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 739, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 601, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(800, 600));
+        setPreferredSize(new java.awt.Dimension(800, 600));
+        setResizable(false);
+        getContentPane().setLayout(null);
+
+        jPanel1.setBackground(new java.awt.Color(13, 32, 51));
+        jPanel1.setLayout(null);
+
+        jpanel_Borda_Arredondada1.setBackground(new java.awt.Color(204, 204, 255));
+        jpanel_Borda_Arredondada1.setLayout(null);
+
+        labelCadastro.setFont(new java.awt.Font("Atletico Bold", 1, 24)); // NOI18N
+        labelCadastro.setForeground(new java.awt.Color(13, 32, 51));
+        labelCadastro.setText("Cadastro:");
+        jpanel_Borda_Arredondada1.add(labelCadastro);
+        labelCadastro.setBounds(20, 10, 130, 50);
+
+        labelAlunos.setFont(new java.awt.Font("Atletico Bold", 1, 24)); // NOI18N
+        labelAlunos.setForeground(new java.awt.Color(251, 136, 52));
+        labelAlunos.setText("Professores");
+        jpanel_Borda_Arredondada1.add(labelAlunos);
+        labelAlunos.setBounds(540, 10, 160, 50);
+
+        jLabel3.setFont(new java.awt.Font("The Bold Font", 1, 14)); // NOI18N
+        jLabel3.setText("SEXO");
+        jpanel_Borda_Arredondada1.add(jLabel3);
+        jLabel3.setBounds(230, 120, 40, 20);
+
+        jFieldNome.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jFieldNomeKeyTyped(evt);
+            }
+        });
+        jpanel_Borda_Arredondada1.add(jFieldNome);
+        jFieldNome.setBounds(100, 70, 100, 22);
+
+        jLabel4.setFont(new java.awt.Font("The Bold Font", 1, 14)); // NOI18N
+        jLabel4.setText("Nome");
+        jpanel_Borda_Arredondada1.add(jLabel4);
+        jLabel4.setBounds(50, 60, 50, 40);
+
+        jFieldSobrenome.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jFieldSobrenomeKeyTyped(evt);
+            }
+        });
+        jpanel_Borda_Arredondada1.add(jFieldSobrenome);
+        jFieldSobrenome.setBounds(100, 120, 110, 22);
+
+        try {
+            jFieldCpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jpanel_Borda_Arredondada1.add(jFieldCpf);
+        jFieldCpf.setBounds(280, 70, 80, 20);
+
+        jLabel6.setFont(new java.awt.Font("The Bold Font", 1, 14)); // NOI18N
+        jLabel6.setText("CPF");
+        jpanel_Borda_Arredondada1.add(jLabel6);
+        jLabel6.setBounds(240, 70, 30, 20);
+
+        jcomboboxSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione o Sexo", "Masculino", "Feminino" }));
+        jpanel_Borda_Arredondada1.add(jcomboboxSexo);
+        jcomboboxSexo.setBounds(280, 120, 130, 22);
+
+        jLabel7.setFont(new java.awt.Font("The Bold Font", 1, 14)); // NOI18N
+        jLabel7.setText("Sobrenome");
+        jpanel_Borda_Arredondada1.add(jLabel7);
+        jLabel7.setBounds(10, 110, 90, 50);
+
+        try {
+            jFieldTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jpanel_Borda_Arredondada1.add(jFieldTelefone);
+        jFieldTelefone.setBounds(100, 220, 90, 20);
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ProfKarate.png"))); // NOI18N
+        jpanel_Borda_Arredondada1.add(jLabel9);
+        jLabel9.setBounds(540, 50, 160, 250);
+
+        jLabel8.setFont(new java.awt.Font("The Bold Font", 1, 14)); // NOI18N
+        jLabel8.setText("TELEFONE");
+        jpanel_Borda_Arredondada1.add(jLabel8);
+        jLabel8.setBounds(20, 200, 70, 60);
+
+        jpanel_Borda_Arredondada2.setBackground(new java.awt.Color(251, 136, 52));
+        jpanel_Borda_Arredondada2.setLayout(null);
+
+        jBotaoCadastrarProf.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/cadastroProf.png"))); // NOI18N
+        jBotaoCadastrarProf.setBorderPainted(false);
+        jBotaoCadastrarProf.setContentAreaFilled(false);
+        jBotaoCadastrarProf.setFocusPainted(false);
+        jBotaoCadastrarProf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBotaoCadastrarProfActionPerformed(evt);
+            }
+        });
+        jpanel_Borda_Arredondada2.add(jBotaoCadastrarProf);
+        jBotaoCadastrarProf.setBounds(60, 0, 190, 60);
+
+        jLabel5.setFont(new java.awt.Font("The Bold Font", 1, 18)); // NOI18N
+        jLabel5.setText("Cadastrar");
+        jpanel_Borda_Arredondada2.add(jLabel5);
+        jLabel5.setBounds(10, 10, 110, 40);
+
+        jpanel_Borda_Arredondada1.add(jpanel_Borda_Arredondada2);
+        jpanel_Borda_Arredondada2.setBounds(20, 300, 230, 60);
+
+        jpanel_Borda_Arredondada3.setBackground(new java.awt.Color(251, 136, 52));
+        jpanel_Borda_Arredondada3.setLayout(null);
+
+        jBotaoSairParaHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/home.png"))); // NOI18N
+        jBotaoSairParaHome.setBorderPainted(false);
+        jBotaoSairParaHome.setContentAreaFilled(false);
+        jBotaoSairParaHome.setFocusPainted(false);
+        jBotaoSairParaHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBotaoSairParaHomeActionPerformed(evt);
+            }
+        });
+        jpanel_Borda_Arredondada3.add(jBotaoSairParaHome);
+        jBotaoSairParaHome.setBounds(60, 0, 190, 60);
+
+        jLabel10.setFont(new java.awt.Font("The Bold Font", 1, 18)); // NOI18N
+        jLabel10.setText("Home");
+        jpanel_Borda_Arredondada3.add(jLabel10);
+        jLabel10.setBounds(10, 10, 110, 40);
+
+        jpanel_Borda_Arredondada1.add(jpanel_Borda_Arredondada3);
+        jpanel_Borda_Arredondada3.setBounds(340, 300, 230, 60);
+
+        jPanel1.add(jpanel_Borda_Arredondada1);
+        jpanel_Borda_Arredondada1.setBounds(30, 130, 730, 430);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/BushidoDojo DomineODomDaArte.png"))); // NOI18N
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(230, 60, 310, 50);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/logo.png"))); // NOI18N
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(350, 10, 50, 50);
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(-1, -3, 960, 610);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jFieldNomeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jFieldNomeKeyTyped
+        char c = evt.getKeyChar();
+        if(!(Character.isAlphabetic(c)||(c==KeyEvent.VK_SPACE) ||(c==KeyEvent.VK_DELETE)||(c==KeyEvent.VK_PERIOD)||(c==KeyEvent.VK_BACK_SPACE))){
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_jFieldNomeKeyTyped
+
+    private void jFieldSobrenomeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jFieldSobrenomeKeyTyped
+        char c = evt.getKeyChar();
+        if(!(Character.isAlphabetic(c)||(c==KeyEvent.VK_SPACE) ||(c==KeyEvent.VK_DELETE)||(c==KeyEvent.VK_PERIOD)||(c==KeyEvent.VK_BACK_SPACE))){
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_jFieldSobrenomeKeyTyped
+
+    private void jBotaoCadastrarProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotaoCadastrarProfActionPerformed
+        String nome = jFieldNome.getText();
+        String sobrenome = jFieldSobrenome.getText();
+        String cpf = jFieldCpf.getText();
+        String sexo = jcomboboxSexo.getSelectedItem().toString();
+        String telefone = jFieldTelefone.getText();
+        String query = "exec Karate.spCadastroProf ?,?,?,?,?";
+        
+        switch(sexo)
+        {
+            case "Feminino" -> sexo = "F";
+            case "Masculino" -> sexo = "M";
+            default -> {
+                JOptionPane.showMessageDialog(this, "Selecione um Sexo válido!", "Erro", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+        }
+        if(nome.isEmpty() || sobrenome.isEmpty() || cpf.isEmpty() || telefone.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Certifique-se de completar todos os campos!", "Erro", JOptionPane.ERROR_MESSAGE);
+        return;
+        } else {
+            try {
+                BDSQLServer.COMANDO.prepareStatement(query);
+                BDSQLServer.COMANDO.setString(1,nome);
+                BDSQLServer.COMANDO.setString(2,sobrenome);
+                BDSQLServer.COMANDO.setString(3,cpf);
+                BDSQLServer.COMANDO.setString(4, sexo);
+                BDSQLServer.COMANDO.setString(5, telefone);
+                BDSQLServer.COMANDO.execute();
+                BDSQLServer.COMANDO.commit();
+                JOptionPane.showMessageDialog(this, "Aluno Cadastrado..", "Alerta", JOptionPane.WARNING_MESSAGE);
+                new jframeCadastroProfessor().setVisible(true);
+                this.dispose();
+                
+            } catch (SQLException ex) {
+                Logger.getLogger(jframeCadastroProfessor.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            }
+        
+        
+    }//GEN-LAST:event_jBotaoCadastrarProfActionPerformed
+
+    private void jBotaoSairParaHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotaoSairParaHomeActionPerformed
+        new jframeHome().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jBotaoSairParaHomeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -59,24 +290,47 @@ public class jframeCdastroProfessor extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(jframeCdastroProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(jframeCadastroProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(jframeCdastroProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(jframeCadastroProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(jframeCdastroProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(jframeCadastroProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(jframeCdastroProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(jframeCadastroProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new jframeCdastroProfessor().setVisible(true);
+                new jframeCadastroProfessor().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBotaoCadastrarProf;
+    private javax.swing.JButton jBotaoSairParaHome;
+    private javax.swing.JFormattedTextField jFieldCpf;
+    private javax.swing.JFormattedTextField jFieldNome;
+    private javax.swing.JFormattedTextField jFieldSobrenome;
+    private javax.swing.JFormattedTextField jFieldTelefone;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JComboBox<String> jcomboboxSexo;
+    private procedimentos.jpanel_Borda_Arredondada jpanel_Borda_Arredondada1;
+    private procedimentos.jpanel_Borda_Arredondada jpanel_Borda_Arredondada2;
+    private procedimentos.jpanel_Borda_Arredondada jpanel_Borda_Arredondada3;
+    private javax.swing.JLabel labelAlunos;
+    private javax.swing.JLabel labelCadastro;
     // End of variables declaration//GEN-END:variables
 }

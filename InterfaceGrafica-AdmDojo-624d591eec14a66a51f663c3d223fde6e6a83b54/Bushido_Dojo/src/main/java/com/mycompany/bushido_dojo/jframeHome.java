@@ -10,6 +10,7 @@ import com.mycompany.bushido_dojo.Cadastros.jframeCadastroAlunos;
 import com.mycompany.bushido_dojo.Cadastros.jframeCadastroProfessor;
 import com.mycompany.bushido_dojo.jframeBushido_Dojo.*;
 import javax.swing.JLabel;
+import com.mycompany.bushido_dojo.Matricula;
 /**
  *
  * @author dudac
@@ -50,11 +51,9 @@ public class jframeHome extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
+        jMenuMatricular = new javax.swing.JMenu();
+        jMenuitemMatricularAluno = new javax.swing.JMenuItem();
 
         jMenuItem2.setText("jMenuItem2");
 
@@ -145,23 +144,27 @@ public class jframeHome extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem3);
 
+        jMenuItem4.setText("jMenuItem4");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem4);
+
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Editar");
+        jMenuMatricular.setText("Matricular");
 
-        jMenuItem4.setText("Matrícula");
-        jMenu2.add(jMenuItem4);
+        jMenuitemMatricularAluno.setText("Aluno");
+        jMenuitemMatricularAluno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuitemMatricularAlunoActionPerformed(evt);
+            }
+        });
+        jMenuMatricular.add(jMenuitemMatricularAluno);
 
-        jMenuItem5.setText("Aluno");
-        jMenu2.add(jMenuItem5);
-
-        jMenuItem6.setText("Horarios");
-        jMenu2.add(jMenuItem6);
-
-        jMenuItem7.setText("Professor");
-        jMenu2.add(jMenuItem7);
-
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(jMenuMatricular);
 
         setJMenuBar(jMenuBar1);
 
@@ -181,6 +184,16 @@ public class jframeHome extends javax.swing.JFrame {
         new jframeCadastroProfessor().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        new Matricula().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuitemMatricularAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuitemMatricularAlunoActionPerformed
+        new Matricula().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuitemMatricularAlunoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -226,15 +239,13 @@ public class jframeHome extends javax.swing.JFrame {
     private javax.swing.JButton botaoSair2;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenu jMenuMatricular;
+    private javax.swing.JMenuItem jMenuitemMatricularAluno;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private procedimentos.jpanel_Borda_Arredondada jpanel_Borda_Arredondada1;

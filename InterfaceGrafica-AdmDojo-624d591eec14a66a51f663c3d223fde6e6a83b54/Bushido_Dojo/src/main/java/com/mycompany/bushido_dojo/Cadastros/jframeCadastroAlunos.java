@@ -42,124 +42,72 @@ public class jframeCadastroAlunos extends javax.swing.JFrame {
     private void initComponents() {
 
         birthdayEvaluator1 = new com.toedter.calendar.demo.BirthdayEvaluator();
-        jPanel1 = new javax.swing.JPanel();
-        jpanel_Borda_Arredondada1 = new procedimentos.jpanel_Borda_Arredondada();
-        jFieldCpf = new javax.swing.JFormattedTextField();
+        curvedGradientePanel2 = new procedimentos.CurvedGradientePanel();
         jFieldNome = new javax.swing.JFormattedTextField();
+        labelNome1 = new javax.swing.JLabel();
         jFieldSobrenome = new javax.swing.JFormattedTextField();
+        labelCpf3 = new javax.swing.JLabel();
+        jpanel_Borda_Arredondada2 = new procedimentos.jpanel_Borda_Arredondada();
+        jbotaoSairHome = new javax.swing.JButton();
+        botaoCadastro = new javax.swing.JButton();
+        labelNome = new javax.swing.JLabel();
+        labelNome2 = new javax.swing.JLabel();
+        jFieldCpf = new javax.swing.JFormattedTextField();
         labelCpf1 = new javax.swing.JLabel();
         jComboBoxFaixas = new javax.swing.JComboBox<>();
         jFieldEmail = new javax.swing.JTextField();
         jFieldCelular = new javax.swing.JFormattedTextField();
         jDataNascimento = new com.toedter.calendar.JDateChooser();
         labelCpf2 = new javax.swing.JLabel();
-        labelCpf3 = new javax.swing.JLabel();
         labelCpf4 = new javax.swing.JLabel();
         labelCpf5 = new javax.swing.JLabel();
         labelCpf6 = new javax.swing.JLabel();
-        jpanel_Borda_Arredondada2 = new procedimentos.jpanel_Borda_Arredondada();
-        jbotaoSairHome = new javax.swing.JButton();
-        botaoCadastro = new javax.swing.JButton();
-        labelNome = new javax.swing.JLabel();
-        labelNome2 = new javax.swing.JLabel();
-        labelNome1 = new javax.swing.JLabel();
-        jpanel_Borda_Arredondada3 = new procedimentos.jpanel_Borda_Arredondada();
-        labelAlunos = new javax.swing.JLabel();
         labelCadastro = new javax.swing.JLabel();
+        labelAlunos = new javax.swing.JLabel();
+        jpanel_Borda_Arredondada1 = new procedimentos.jpanel_Borda_Arredondada();
+        jLabelBushido = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 600));
         setPreferredSize(new java.awt.Dimension(800, 600));
         setResizable(false);
+        getContentPane().setLayout(null);
 
-        jPanel1.setBackground(new java.awt.Color(13, 32, 51));
-        jPanel1.setLayout(null);
+        curvedGradientePanel2.setLayout(null);
 
-        jpanel_Borda_Arredondada1.setBackground(new java.awt.Color(204, 204, 255));
-        jpanel_Borda_Arredondada1.setLayout(null);
-
-        try {
-            jFieldCpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        jpanel_Borda_Arredondada1.add(jFieldCpf);
-        jFieldCpf.setBounds(90, 100, 90, 22);
-
+        jFieldNome.setBackground(new java.awt.Color(13, 32, 51));
+        jFieldNome.setForeground(new java.awt.Color(255, 255, 255));
+        jFieldNome.setCaretColor(new java.awt.Color(255, 255, 255));
         jFieldNome.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jFieldNomeKeyTyped(evt);
             }
         });
-        jpanel_Borda_Arredondada1.add(jFieldNome);
-        jFieldNome.setBounds(120, 9, 100, 22);
+        curvedGradientePanel2.add(jFieldNome);
+        jFieldNome.setBounds(170, 130, 100, 22);
 
+        labelNome1.setFont(new java.awt.Font("The Bold Font", 1, 14)); // NOI18N
+        labelNome1.setForeground(new java.awt.Color(255, 255, 255));
+        labelNome1.setText("Nome");
+        curvedGradientePanel2.add(labelNome1);
+        labelNome1.setBounds(120, 110, 60, 60);
+
+        jFieldSobrenome.setBackground(new java.awt.Color(13, 32, 51));
+        jFieldSobrenome.setForeground(new java.awt.Color(255, 255, 255));
         jFieldSobrenome.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jFieldSobrenomeKeyTyped(evt);
             }
         });
-        jpanel_Borda_Arredondada1.add(jFieldSobrenome);
-        jFieldSobrenome.setBounds(390, 9, 100, 22);
-
-        labelCpf1.setFont(new java.awt.Font("The Bold Font", 1, 14)); // NOI18N
-        labelCpf1.setForeground(new java.awt.Color(13, 32, 51));
-        labelCpf1.setText("Faixa");
-        jpanel_Borda_Arredondada1.add(labelCpf1);
-        labelCpf1.setBounds(40, 190, 50, 15);
-
-        jComboBoxFaixas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione a Faixa", "Branca", "Amarela", "Laranja", "Verde", "Azul", "Roxa", "Marrom", "Preta" }));
-        jComboBoxFaixas.setName(""); // NOI18N
-        jpanel_Borda_Arredondada1.add(jComboBoxFaixas);
-        jComboBoxFaixas.setBounds(120, 180, 130, 22);
-
-        jFieldEmail.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                jFieldEmailKeyTyped(evt);
-            }
-        });
-        jpanel_Borda_Arredondada1.add(jFieldEmail);
-        jFieldEmail.setBounds(400, 90, 100, 22);
-
-        try {
-            jFieldCelular.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#####-####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        jpanel_Borda_Arredondada1.add(jFieldCelular);
-        jFieldCelular.setBounds(430, 180, 126, 22);
-        jpanel_Borda_Arredondada1.add(jDataNascimento);
-        jDataNascimento.setBounds(180, 290, 176, 22);
-
-        labelCpf2.setFont(new java.awt.Font("The Bold Font", 1, 14)); // NOI18N
-        labelCpf2.setForeground(new java.awt.Color(13, 32, 51));
-        labelCpf2.setText("CPF");
-        jpanel_Borda_Arredondada1.add(labelCpf2);
-        labelCpf2.setBounds(40, 95, 40, 40);
+        curvedGradientePanel2.add(jFieldSobrenome);
+        jFieldSobrenome.setBounds(500, 120, 100, 22);
 
         labelCpf3.setFont(new java.awt.Font("The Bold Font", 1, 14)); // NOI18N
-        labelCpf3.setForeground(new java.awt.Color(13, 32, 51));
+        labelCpf3.setForeground(new java.awt.Color(255, 255, 255));
         labelCpf3.setText("sOBRENOME");
-        jpanel_Borda_Arredondada1.add(labelCpf3);
-        labelCpf3.setBounds(289, 14, 90, 15);
-
-        labelCpf4.setFont(new java.awt.Font("The Bold Font", 1, 14)); // NOI18N
-        labelCpf4.setForeground(new java.awt.Color(13, 32, 51));
-        labelCpf4.setText("Email");
-        jpanel_Borda_Arredondada1.add(labelCpf4);
-        labelCpf4.setBounds(340, 85, 50, 30);
-
-        labelCpf5.setFont(new java.awt.Font("The Bold Font", 1, 14)); // NOI18N
-        labelCpf5.setForeground(new java.awt.Color(13, 32, 51));
-        labelCpf5.setText("Celular");
-        jpanel_Borda_Arredondada1.add(labelCpf5);
-        labelCpf5.setBounds(320, 180, 70, 15);
-
-        labelCpf6.setFont(new java.awt.Font("The Bold Font", 1, 18)); // NOI18N
-        labelCpf6.setForeground(new java.awt.Color(13, 32, 51));
-        labelCpf6.setText("DATA DE NASCIMENTO");
-        jpanel_Borda_Arredondada1.add(labelCpf6);
-        labelCpf6.setBounds(170, 260, 190, 19);
+        curvedGradientePanel2.add(labelCpf3);
+        labelCpf3.setBounds(410, 110, 90, 40);
 
         jpanel_Borda_Arredondada2.setBackground(new java.awt.Color(251, 136, 52));
         jpanel_Borda_Arredondada2.setLayout(null);
@@ -203,65 +151,130 @@ public class jframeCadastroAlunos extends javax.swing.JFrame {
         jpanel_Borda_Arredondada2.add(labelNome2);
         labelNome2.setBounds(470, 60, 50, 15);
 
-        jpanel_Borda_Arredondada1.add(jpanel_Borda_Arredondada2);
-        jpanel_Borda_Arredondada2.setBounds(30, 380, 540, 80);
+        curvedGradientePanel2.add(jpanel_Borda_Arredondada2);
+        jpanel_Borda_Arredondada2.setBounds(110, 360, 540, 80);
 
-        labelNome1.setFont(new java.awt.Font("The Bold Font", 1, 14)); // NOI18N
-        labelNome1.setForeground(new java.awt.Color(13, 32, 51));
-        labelNome1.setText("Nome");
-        jpanel_Borda_Arredondada1.add(labelNome1);
-        labelNome1.setBounds(50, 14, 60, 15);
+        jFieldCpf.setBackground(new java.awt.Color(13, 32, 51));
+        jFieldCpf.setForeground(new java.awt.Color(255, 255, 255));
+        try {
+            jFieldCpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        curvedGradientePanel2.add(jFieldCpf);
+        jFieldCpf.setBounds(170, 190, 90, 22);
 
-        jPanel1.add(jpanel_Borda_Arredondada1);
-        jpanel_Borda_Arredondada1.setBounds(90, 70, 590, 480);
+        labelCpf1.setFont(new java.awt.Font("The Bold Font", 1, 14)); // NOI18N
+        labelCpf1.setForeground(new java.awt.Color(255, 255, 255));
+        labelCpf1.setText("Faixa");
+        curvedGradientePanel2.add(labelCpf1);
+        labelCpf1.setBounds(120, 230, 50, 40);
 
-        jpanel_Borda_Arredondada3.setBackground(new java.awt.Color(100, 100, 100));
-        jpanel_Borda_Arredondada3.setLayout(null);
+        jComboBoxFaixas.setBackground(new java.awt.Color(13, 32, 51));
+        jComboBoxFaixas.setForeground(new java.awt.Color(255, 255, 255));
+        jComboBoxFaixas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione a Faixa", "Branca", "Amarela", "Laranja", "Verde", "Azul", "Roxa", "Marrom", "Preta" }));
+        jComboBoxFaixas.setName(""); // NOI18N
+        curvedGradientePanel2.add(jComboBoxFaixas);
+        jComboBoxFaixas.setBounds(170, 240, 130, 22);
 
-        labelAlunos.setFont(new java.awt.Font("Atletico Bold", 1, 24)); // NOI18N
-        labelAlunos.setForeground(new java.awt.Color(251, 136, 52));
-        labelAlunos.setText("Alunos");
-        jpanel_Borda_Arredondada3.add(labelAlunos);
-        labelAlunos.setBounds(474, 6, 130, 50);
+        jFieldEmail.setBackground(new java.awt.Color(13, 32, 51));
+        jFieldEmail.setForeground(new java.awt.Color(255, 255, 255));
+        jFieldEmail.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jFieldEmailKeyTyped(evt);
+            }
+        });
+        curvedGradientePanel2.add(jFieldEmail);
+        jFieldEmail.setBounds(490, 180, 100, 22);
+
+        jFieldCelular.setBackground(new java.awt.Color(13, 32, 51));
+        jFieldCelular.setForeground(new java.awt.Color(255, 255, 255));
+        try {
+            jFieldCelular.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        curvedGradientePanel2.add(jFieldCelular);
+        jFieldCelular.setBounds(500, 230, 126, 22);
+
+        jDataNascimento.setBackground(new java.awt.Color(13, 32, 51));
+        jDataNascimento.setForeground(new java.awt.Color(255, 255, 255));
+        curvedGradientePanel2.add(jDataNascimento);
+        jDataNascimento.setBounds(280, 310, 176, 22);
+
+        labelCpf2.setFont(new java.awt.Font("The Bold Font", 1, 14)); // NOI18N
+        labelCpf2.setForeground(new java.awt.Color(255, 255, 255));
+        labelCpf2.setText("CPF");
+        curvedGradientePanel2.add(labelCpf2);
+        labelCpf2.setBounds(130, 180, 40, 40);
+
+        labelCpf4.setFont(new java.awt.Font("The Bold Font", 1, 14)); // NOI18N
+        labelCpf4.setForeground(new java.awt.Color(255, 255, 255));
+        labelCpf4.setText("Email");
+        curvedGradientePanel2.add(labelCpf4);
+        labelCpf4.setBounds(440, 170, 50, 40);
+
+        labelCpf5.setFont(new java.awt.Font("The Bold Font", 1, 14)); // NOI18N
+        labelCpf5.setForeground(new java.awt.Color(255, 255, 255));
+        labelCpf5.setText("Celular");
+        curvedGradientePanel2.add(labelCpf5);
+        labelCpf5.setBounds(430, 220, 70, 40);
+
+        labelCpf6.setFont(new java.awt.Font("The Bold Font", 1, 18)); // NOI18N
+        labelCpf6.setForeground(new java.awt.Color(255, 255, 255));
+        labelCpf6.setText("DATA DE NASCIMENTO");
+        curvedGradientePanel2.add(labelCpf6);
+        labelCpf6.setBounds(270, 280, 190, 19);
 
         labelCadastro.setFont(new java.awt.Font("Atletico Bold", 1, 24)); // NOI18N
         labelCadastro.setForeground(new java.awt.Color(255, 255, 255));
         labelCadastro.setText("Cadastro:");
-        jpanel_Borda_Arredondada3.add(labelCadastro);
-        labelCadastro.setBounds(6, 6, 130, 50);
+        curvedGradientePanel2.add(labelCadastro);
+        labelCadastro.setBounds(90, 20, 130, 50);
 
-        jPanel1.add(jpanel_Borda_Arredondada3);
-        jpanel_Borda_Arredondada3.setBounds(80, 10, 610, 50);
+        labelAlunos.setFont(new java.awt.Font("Atletico Bold", 1, 24)); // NOI18N
+        labelAlunos.setForeground(new java.awt.Color(251, 136, 52));
+        labelAlunos.setText("Alunos");
+        curvedGradientePanel2.add(labelAlunos);
+        labelAlunos.setBounds(510, 20, 130, 50);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
+        getContentPane().add(curvedGradientePanel2);
+        curvedGradientePanel2.setBounds(0, 70, 810, 550);
+
+        jpanel_Borda_Arredondada1.setBackground(new java.awt.Color(13, 32, 51));
+
+        jLabelBushido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/logo.png"))); // NOI18N
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/BushidoDojo DomineODomDaArte.png"))); // NOI18N
+
+        javax.swing.GroupLayout jpanel_Borda_Arredondada1Layout = new javax.swing.GroupLayout(jpanel_Borda_Arredondada1);
+        jpanel_Borda_Arredondada1.setLayout(jpanel_Borda_Arredondada1Layout);
+        jpanel_Borda_Arredondada1Layout.setHorizontalGroup(
+            jpanel_Borda_Arredondada1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpanel_Borda_Arredondada1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabelBushido)
+                .addGap(0, 0, 0)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(430, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE)
+        jpanel_Borda_Arredondada1Layout.setVerticalGroup(
+            jpanel_Borda_Arredondada1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpanel_Borda_Arredondada1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jpanel_Borda_Arredondada1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelBushido, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jpanel_Borda_Arredondada1Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
+
+        getContentPane().add(jpanel_Borda_Arredondada1);
+        jpanel_Borda_Arredondada1.setBounds(0, 0, 810, 90);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jFieldNomeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jFieldNomeKeyTyped
-        char c = evt.getKeyChar();
-        if(!(Character.isAlphabetic(c)||(c==KeyEvent.VK_SPACE) ||(c==KeyEvent.VK_DELETE)||(c==KeyEvent.VK_PERIOD)||(c==KeyEvent.VK_BACK_SPACE))){
-            getToolkit().beep();
-            evt.consume();
-        }
-    }//GEN-LAST:event_jFieldNomeKeyTyped
-
-    private void jFieldSobrenomeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jFieldSobrenomeKeyTyped
-        char c = evt.getKeyChar();
-        if(!(Character.isAlphabetic(c)||(c==KeyEvent.VK_SPACE) ||(c==KeyEvent.VK_DELETE)||(c==KeyEvent.VK_PERIOD)||(c==KeyEvent.VK_BACK_SPACE))){
-            getToolkit().beep();
-            evt.consume();
-        }
-    }//GEN-LAST:event_jFieldSobrenomeKeyTyped
 
     private void jFieldEmailKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jFieldEmailKeyTyped
         char c = evt.getKeyChar();
@@ -278,7 +291,7 @@ public class jframeCadastroAlunos extends javax.swing.JFrame {
         String celular = jFieldCelular.getText();
         Date dataNascimento = jDataNascimento.getDate();
         int idFaixa = -1;
-        
+
         String corSelecionada = jComboBoxFaixas.getSelectedItem().toString();
         if(corSelecionada.equals("Selecione a Faixa")){
             JOptionPane.showMessageDialog(this, "Por favor, selecione uma faixa válida.", "Erro", JOptionPane.ERROR_MESSAGE);
@@ -295,51 +308,66 @@ public class jframeCadastroAlunos extends javax.swing.JFrame {
             case "Preta" -> idFaixa=7;
             default -> {}
         }
-        
+
         if(nome.isEmpty()||cpf.isEmpty()||sobrenome.isEmpty()||email.isEmpty()||celular.isEmpty())
         {
             JOptionPane.showMessageDialog(this, "Certifique-se de Completar todos os campos!", "Erro", JOptionPane.ERROR_MESSAGE);
         }
         else{
             String query = "EXEC Karate.spInsereAluno ?,  ?,  ?,  ?,  ?,  ?,  ?";
-            
+
             try {
                 BDSQLServer.COMANDO.prepareStatement(query);
-                BDSQLServer.COMANDO.setInt(1,idFaixa);                
-                BDSQLServer.COMANDO.setString(2,nome);                
+                BDSQLServer.COMANDO.setInt(1,idFaixa);
+                BDSQLServer.COMANDO.setString(2,nome);
                 BDSQLServer.COMANDO.setString(3,sobrenome);
                 BDSQLServer.COMANDO.setString(4,cpf);
                 BDSQLServer.COMANDO.setString(5,email);
                 BDSQLServer.COMANDO.setString(6,celular);
-                
-                if (dataNascimento != null) 
+
+                if (dataNascimento != null)
                 {
                     java.sql.Date sqldataNascimento = new java.sql.Date(dataNascimento.getTime());
-                    BDSQLServer.COMANDO.setDate(7,sqldataNascimento);   
+                    BDSQLServer.COMANDO.setDate(7,sqldataNascimento);
                     BDSQLServer.COMANDO.execute();
                     BDSQLServer.COMANDO.commit();
                     JOptionPane.showMessageDialog(this, "Aluno Cadastrado..", "Alerta", JOptionPane.WARNING_MESSAGE);
                     new jframeCadastroAlunos().setVisible(true);
                     this.dispose();
-                    
+
                 }
                 else{
                     JOptionPane.showMessageDialog(this, "Por favor, selecione uma Data de Nascimento válida.", "Erro", JOptionPane.ERROR_MESSAGE);
                 }
-                
+
             } catch (SQLException ex) {
                 Logger.getLogger(jframeCadastroAlunos.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
+
         }
-  
-        
+
     }//GEN-LAST:event_botaoCadastroActionPerformed
 
     private void jbotaoSairHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbotaoSairHomeActionPerformed
         new jframeHome().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jbotaoSairHomeActionPerformed
+
+    private void jFieldSobrenomeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jFieldSobrenomeKeyTyped
+        char c = evt.getKeyChar();
+        if(!(Character.isAlphabetic(c)||(c==KeyEvent.VK_SPACE) ||(c==KeyEvent.VK_DELETE)||(c==KeyEvent.VK_PERIOD)||(c==KeyEvent.VK_BACK_SPACE))){
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_jFieldSobrenomeKeyTyped
+
+    private void jFieldNomeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jFieldNomeKeyTyped
+        char c = evt.getKeyChar();
+        if(!(Character.isAlphabetic(c)||(c==KeyEvent.VK_SPACE) ||(c==KeyEvent.VK_DELETE)||(c==KeyEvent.VK_PERIOD)||(c==KeyEvent.VK_BACK_SPACE))){
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_jFieldNomeKeyTyped
 
     
     public static void main(String args[]) {
@@ -377,6 +405,7 @@ public class jframeCadastroAlunos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.toedter.calendar.demo.BirthdayEvaluator birthdayEvaluator1;
     private javax.swing.JButton botaoCadastro;
+    private procedimentos.CurvedGradientePanel curvedGradientePanel2;
     private javax.swing.JComboBox<String> jComboBoxFaixas;
     private com.toedter.calendar.JDateChooser jDataNascimento;
     private javax.swing.JFormattedTextField jFieldCelular;
@@ -384,11 +413,11 @@ public class jframeCadastroAlunos extends javax.swing.JFrame {
     private javax.swing.JTextField jFieldEmail;
     private javax.swing.JFormattedTextField jFieldNome;
     private javax.swing.JFormattedTextField jFieldSobrenome;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabelBushido;
     private javax.swing.JButton jbotaoSairHome;
     private procedimentos.jpanel_Borda_Arredondada jpanel_Borda_Arredondada1;
     private procedimentos.jpanel_Borda_Arredondada jpanel_Borda_Arredondada2;
-    private procedimentos.jpanel_Borda_Arredondada jpanel_Borda_Arredondada3;
     private javax.swing.JLabel labelAlunos;
     private javax.swing.JLabel labelCadastro;
     private javax.swing.JLabel labelCpf1;

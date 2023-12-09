@@ -51,9 +51,11 @@ public class jframeHome extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
         jMenuMatricular = new javax.swing.JMenu();
         jMenuitemMatricularAluno = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuDeleteAluno = new javax.swing.JMenuItem();
+        jMenuDeleteMatricula = new javax.swing.JMenuItem();
 
         jMenuItem2.setText("jMenuItem2");
 
@@ -144,14 +146,6 @@ public class jframeHome extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem3);
 
-        jMenuItem4.setText("jMenuItem4");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem4);
-
         jMenuBar1.add(jMenu1);
 
         jMenuMatricular.setText("Matricular");
@@ -165,6 +159,16 @@ public class jframeHome extends javax.swing.JFrame {
         jMenuMatricular.add(jMenuitemMatricularAluno);
 
         jMenuBar1.add(jMenuMatricular);
+
+        jMenu2.setText("Deletar");
+
+        jMenuDeleteAluno.setText("Aluno");
+        jMenu2.add(jMenuDeleteAluno);
+
+        jMenuDeleteMatricula.setText("Matricula");
+        jMenu2.add(jMenuDeleteMatricula);
+
+        jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
 
@@ -184,11 +188,6 @@ public class jframeHome extends javax.swing.JFrame {
         new jframeCadastroProfessor().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
-
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        new Matricula().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuitemMatricularAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuitemMatricularAlunoActionPerformed
         new Matricula().setVisible(true);
@@ -239,11 +238,13 @@ public class jframeHome extends javax.swing.JFrame {
     private javax.swing.JButton botaoSair2;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuDeleteAluno;
+    private javax.swing.JMenuItem jMenuDeleteMatricula;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenu jMenuMatricular;
     private javax.swing.JMenuItem jMenuitemMatricularAluno;
     private javax.swing.JPanel jPanel1;

@@ -1,5 +1,7 @@
+com\mycompany\bushido_dojo\Deletes\jframeDeleteAluno$1.class
 bd\conexaoBD\BDSQLServer.class
 bdfuncionalidades\PreencheTabelas.class
 bd\conexaoBD\core\MeuStatement.class
+com\mycompany\bushido_dojo\Deletes\jframeDeleteAluno.class
 bd\conexaoBD\core\MeuResultSet.class
 bd\conexaoBD\core\MeuPreparedStatement.class

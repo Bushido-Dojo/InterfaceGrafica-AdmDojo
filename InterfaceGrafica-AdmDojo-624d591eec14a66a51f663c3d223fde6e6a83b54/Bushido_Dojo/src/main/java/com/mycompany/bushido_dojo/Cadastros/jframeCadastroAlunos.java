@@ -9,13 +9,22 @@ import javax.swing.*;
 import procedimentos.*;
 import bd.conexaoBD.BDSQLServer;
 import com.mycompany.bushido_dojo.jframeHome;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import java.io.BufferedWriter;
+import java.io.OutputStreamWriter;
 /**
  *
  * @author dudac
@@ -64,6 +73,8 @@ public class jframeCadastroAlunos extends javax.swing.JFrame {
         labelCpf6 = new javax.swing.JLabel();
         labelCadastro = new javax.swing.JLabel();
         labelAlunos = new javax.swing.JLabel();
+        labelCpf7 = new javax.swing.JLabel();
+        jFieldSenha = new javax.swing.JPasswordField();
         jpanel_Borda_Arredondada1 = new procedimentos.jpanel_Borda_Arredondada();
         jLabelBushido = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -101,13 +112,13 @@ public class jframeCadastroAlunos extends javax.swing.JFrame {
             }
         });
         curvedGradientePanel2.add(jFieldSobrenome);
-        jFieldSobrenome.setBounds(500, 120, 100, 22);
+        jFieldSobrenome.setBounds(510, 130, 100, 22);
 
         labelCpf3.setFont(new java.awt.Font("The Bold Font", 1, 14)); // NOI18N
         labelCpf3.setForeground(new java.awt.Color(255, 255, 255));
         labelCpf3.setText("sOBRENOME");
         curvedGradientePanel2.add(labelCpf3);
-        labelCpf3.setBounds(410, 110, 90, 40);
+        labelCpf3.setBounds(420, 120, 90, 40);
 
         jpanel_Borda_Arredondada2.setBackground(new java.awt.Color(251, 136, 52));
         jpanel_Borda_Arredondada2.setLayout(null);
@@ -152,7 +163,7 @@ public class jframeCadastroAlunos extends javax.swing.JFrame {
         labelNome2.setBounds(470, 60, 50, 15);
 
         curvedGradientePanel2.add(jpanel_Borda_Arredondada2);
-        jpanel_Borda_Arredondada2.setBounds(110, 360, 540, 80);
+        jpanel_Borda_Arredondada2.setBounds(110, 420, 540, 80);
 
         jFieldCpf.setBackground(new java.awt.Color(13, 32, 51));
         jFieldCpf.setForeground(new java.awt.Color(255, 255, 255));
@@ -185,7 +196,7 @@ public class jframeCadastroAlunos extends javax.swing.JFrame {
             }
         });
         curvedGradientePanel2.add(jFieldEmail);
-        jFieldEmail.setBounds(490, 180, 100, 22);
+        jFieldEmail.setBounds(480, 190, 100, 22);
 
         jFieldCelular.setBackground(new java.awt.Color(13, 32, 51));
         jFieldCelular.setForeground(new java.awt.Color(255, 255, 255));
@@ -195,12 +206,12 @@ public class jframeCadastroAlunos extends javax.swing.JFrame {
             ex.printStackTrace();
         }
         curvedGradientePanel2.add(jFieldCelular);
-        jFieldCelular.setBounds(500, 230, 126, 22);
+        jFieldCelular.setBounds(490, 250, 126, 22);
 
         jDataNascimento.setBackground(new java.awt.Color(13, 32, 51));
         jDataNascimento.setForeground(new java.awt.Color(255, 255, 255));
         curvedGradientePanel2.add(jDataNascimento);
-        jDataNascimento.setBounds(280, 310, 176, 22);
+        jDataNascimento.setBounds(140, 320, 176, 22);
 
         labelCpf2.setFont(new java.awt.Font("The Bold Font", 1, 14)); // NOI18N
         labelCpf2.setForeground(new java.awt.Color(255, 255, 255));
@@ -212,19 +223,19 @@ public class jframeCadastroAlunos extends javax.swing.JFrame {
         labelCpf4.setForeground(new java.awt.Color(255, 255, 255));
         labelCpf4.setText("Email");
         curvedGradientePanel2.add(labelCpf4);
-        labelCpf4.setBounds(440, 170, 50, 40);
+        labelCpf4.setBounds(430, 180, 50, 40);
 
         labelCpf5.setFont(new java.awt.Font("The Bold Font", 1, 14)); // NOI18N
         labelCpf5.setForeground(new java.awt.Color(255, 255, 255));
-        labelCpf5.setText("Celular");
+        labelCpf5.setText("SENHA");
         curvedGradientePanel2.add(labelCpf5);
-        labelCpf5.setBounds(430, 220, 70, 40);
+        labelCpf5.setBounds(440, 300, 70, 40);
 
         labelCpf6.setFont(new java.awt.Font("The Bold Font", 1, 18)); // NOI18N
         labelCpf6.setForeground(new java.awt.Color(255, 255, 255));
         labelCpf6.setText("DATA DE NASCIMENTO");
         curvedGradientePanel2.add(labelCpf6);
-        labelCpf6.setBounds(270, 280, 190, 19);
+        labelCpf6.setBounds(130, 290, 190, 19);
 
         labelCadastro.setFont(new java.awt.Font("Atletico Bold", 1, 24)); // NOI18N
         labelCadastro.setForeground(new java.awt.Color(255, 255, 255));
@@ -237,6 +248,17 @@ public class jframeCadastroAlunos extends javax.swing.JFrame {
         labelAlunos.setText("Alunos");
         curvedGradientePanel2.add(labelAlunos);
         labelAlunos.setBounds(510, 20, 130, 50);
+
+        labelCpf7.setFont(new java.awt.Font("The Bold Font", 1, 14)); // NOI18N
+        labelCpf7.setForeground(new java.awt.Color(255, 255, 255));
+        labelCpf7.setText("Celular");
+        curvedGradientePanel2.add(labelCpf7);
+        labelCpf7.setBounds(420, 240, 70, 40);
+
+        jFieldSenha.setBackground(new java.awt.Color(13, 32, 51));
+        jFieldSenha.setForeground(new java.awt.Color(255, 255, 255));
+        curvedGradientePanel2.add(jFieldSenha);
+        jFieldSenha.setBounds(500, 310, 110, 22);
 
         getContentPane().add(curvedGradientePanel2);
         curvedGradientePanel2.setBounds(0, 70, 810, 550);
@@ -291,6 +313,8 @@ public class jframeCadastroAlunos extends javax.swing.JFrame {
         String celular = jFieldCelular.getText();
         Date dataNascimento = jDataNascimento.getDate();
         int idFaixa = -1;
+        String senhaDescript = new String(jFieldSenha.getPassword());
+        
 
         String corSelecionada = jComboBoxFaixas.getSelectedItem().toString();
         if(corSelecionada.equals("Selecione a Faixa")){
@@ -309,14 +333,17 @@ public class jframeCadastroAlunos extends javax.swing.JFrame {
             default -> {}
         }
 
-        if(nome.isEmpty()||cpf.isEmpty()||sobrenome.isEmpty()||email.isEmpty()||celular.isEmpty())
+        if(nome.isEmpty()||cpf.isEmpty()||sobrenome.isEmpty()||email.isEmpty()||celular.isEmpty()||senhaDescript.isEmpty())
         {
             JOptionPane.showMessageDialog(this, "Certifique-se de Completar todos os campos!", "Erro", JOptionPane.ERROR_MESSAGE);
         }
-        else{
-            String query = "EXEC Karate.spInsereAluno ?,  ?,  ?,  ?,  ?,  ?,  ?";
+        else{      
+            
+            String query = "EXEC Karate.spInsereAluno ?,  ?,  ?,  ?,  ?,  ?,  ?, ?";
 
             try {
+                String senhaCriptografada = obterSenhaCriptografadaComAPI(senhaDescript);
+                
                 BDSQLServer.COMANDO.prepareStatement(query);
                 BDSQLServer.COMANDO.setInt(1,idFaixa);
                 BDSQLServer.COMANDO.setString(2,nome);
@@ -329,6 +356,7 @@ public class jframeCadastroAlunos extends javax.swing.JFrame {
                 {
                     java.sql.Date sqldataNascimento = new java.sql.Date(dataNascimento.getTime());
                     BDSQLServer.COMANDO.setDate(7,sqldataNascimento);
+                    BDSQLServer.COMANDO.setString(8,senhaCriptografada);
                     BDSQLServer.COMANDO.execute();
                     BDSQLServer.COMANDO.commit();
                     JOptionPane.showMessageDialog(this, "Aluno Cadastrado..", "Alerta", JOptionPane.WARNING_MESSAGE);
@@ -348,6 +376,56 @@ public class jframeCadastroAlunos extends javax.swing.JFrame {
 
     }//GEN-LAST:event_botaoCadastroActionPerformed
 
+   private String obterSenhaCriptografadaComAPI(String senha) {
+        try {
+            URL url = new URL("http://localhost:8080/api/java/criptografa-senha");
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            con.setRequestMethod("POST");
+            con.setRequestProperty("Content-Type", "application/json");
+            con.setDoOutput(true);
+
+            // Construir o objeto JSON usando Gson
+            JsonObject jsonInput = new JsonObject();
+            jsonInput.addProperty("senha", senha);
+
+            // Enviar o objeto JSON para a API
+            try (OutputStream os = con.getOutputStream();
+                 BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os, "UTF-8"))) {
+                writer.write(new Gson().toJson(jsonInput));
+            }
+
+            // Receber a resposta da API
+            int responseCode = con.getResponseCode();
+            if (responseCode == HttpURLConnection.HTTP_OK) {
+                try (BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream(), "UTF-8"))) {
+                    StringBuilder response = new StringBuilder();
+                    String responseLine;
+                    while ((responseLine = br.readLine()) != null) {
+                        response.append(responseLine.trim());
+                    }
+
+                    // Parse do JSON para obter apenas a senha criptografada
+                    JsonObject jsonObject = new Gson().fromJson(response.toString(), JsonObject.class);
+                    String senhaCriptografada = jsonObject.get("senhaCriptografada").getAsString();
+
+                    return senhaCriptografada;
+                }
+            } else {
+                // Handle error response (if any)
+                // ...
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Trate as exceções adequadamente
+        }
+        return null;
+   }
+
+
+
+    
+    
+    
     private void jbotaoSairHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbotaoSairHomeActionPerformed
         new jframeHome().setVisible(true);
         this.dispose();
@@ -412,6 +490,7 @@ public class jframeCadastroAlunos extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField jFieldCpf;
     private javax.swing.JTextField jFieldEmail;
     private javax.swing.JFormattedTextField jFieldNome;
+    private javax.swing.JPasswordField jFieldSenha;
     private javax.swing.JFormattedTextField jFieldSobrenome;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelBushido;
@@ -426,6 +505,7 @@ public class jframeCadastroAlunos extends javax.swing.JFrame {
     private javax.swing.JLabel labelCpf4;
     private javax.swing.JLabel labelCpf5;
     private javax.swing.JLabel labelCpf6;
+    private javax.swing.JLabel labelCpf7;
     private javax.swing.JLabel labelNome;
     private javax.swing.JLabel labelNome1;
     private javax.swing.JLabel labelNome2;

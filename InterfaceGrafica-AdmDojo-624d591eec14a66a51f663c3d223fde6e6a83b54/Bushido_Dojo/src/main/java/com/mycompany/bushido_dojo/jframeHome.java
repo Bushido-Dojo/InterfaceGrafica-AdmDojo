@@ -8,6 +8,9 @@ import bd.conexaoBD.core.*;
 import bdfuncionalidades.*;
 import com.mycompany.bushido_dojo.Cadastros.jframeCadastroAlunos;
 import com.mycompany.bushido_dojo.Cadastros.jframeCadastroProfessor;
+import com.mycompany.bushido_dojo.Deletes.jframeDeleteAluno;
+import com.mycompany.bushido_dojo.Deletes.jframeDeleteMatricula;
+import com.mycompany.bushido_dojo.Editar.jframeHorarios;
 import com.mycompany.bushido_dojo.jframeBushido_Dojo.*;
 import javax.swing.JLabel;
 import com.mycompany.bushido_dojo.Matricula;
@@ -56,6 +59,8 @@ public class jframeHome extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jMenuDeleteAluno = new javax.swing.JMenuItem();
         jMenuDeleteMatricula = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuItem4 = new javax.swing.JMenuItem();
 
         jMenuItem2.setText("jMenuItem2");
 
@@ -163,12 +168,34 @@ public class jframeHome extends javax.swing.JFrame {
         jMenu2.setText("Deletar");
 
         jMenuDeleteAluno.setText("Aluno");
+        jMenuDeleteAluno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuDeleteAlunoActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuDeleteAluno);
 
         jMenuDeleteMatricula.setText("Matricula");
+        jMenuDeleteMatricula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuDeleteMatriculaActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuDeleteMatricula);
 
         jMenuBar1.add(jMenu2);
+
+        jMenu3.setText("Atualizar");
+
+        jMenuItem4.setText("Horario");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem4);
+
+        jMenuBar1.add(jMenu3);
 
         setJMenuBar(jMenuBar1);
 
@@ -193,6 +220,19 @@ public class jframeHome extends javax.swing.JFrame {
         new Matricula().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuitemMatricularAlunoActionPerformed
+
+    private void jMenuDeleteAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuDeleteAlunoActionPerformed
+        new jframeDeleteAluno().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuDeleteAlunoActionPerformed
+
+    private void jMenuDeleteMatriculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuDeleteMatriculaActionPerformed
+        new jframeDeleteMatricula().setVisible(true);
+    }//GEN-LAST:event_jMenuDeleteMatriculaActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        new jframeHorarios().setVisible(true);
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -239,12 +279,14 @@ public class jframeHome extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuDeleteAluno;
     private javax.swing.JMenuItem jMenuDeleteMatricula;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenu jMenuMatricular;
     private javax.swing.JMenuItem jMenuitemMatricularAluno;
     private javax.swing.JPanel jPanel1;
